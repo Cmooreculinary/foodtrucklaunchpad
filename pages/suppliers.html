@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Choose Your Chassis</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<div class="sticky top-0 z-20 bg-background-light dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Choose Your Chassis</h2>
+<span class="text-gray-500 dark:text-gray-400 text-xs font-medium flex items-center gap-1">
+                        Phase 2: Vehicle Selection
+                    </span>
+</div>
+<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<div class="px-4 py-2 pb-3">
+<div class="flex h-10 w-full items-center justify-center rounded-lg bg-gray-200 dark:bg-[#283039] p-1">
+<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
+<span class="truncate text-gray-600 dark:text-[#9dabb9] text-xs font-semibold group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">All</span>
+<input checked="" class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="All"/>
+</label>
+<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
+<span class="truncate text-gray-600 dark:text-[#9dabb9] text-xs font-semibold group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">Trucks</span>
+<input class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="Trucks"/>
+</label>
+<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
+<span class="truncate text-gray-600 dark:text-[#9dabb9] text-xs font-semibold group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">Trailers</span>
+<input class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="Trailers"/>
+</label>
+</div>
+</div>
+</div>
+<div class="flex flex-col p-4 gap-5 pb-24">
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden active:scale-[0.99] transition-transform duration-200 cursor-pointer">
+<div class="relative h-48 w-full">
+<img alt="Step Van Food Truck" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTeR3G-KeD93RrKCRPMdiD6gvjAwKkNxMMqajMrnnWD1kLtY1DIU86XU8njxt7eKIhpI6S3Kbt9fV0Mbng6LU5dT5IdpMR_y8TWpIC1f46icZbRSDtnl2e_31pc1v3JNGWT9BE-0tPv_ggsYUQjBjLTGXhsFDu814N6dzJyCTeu_CWL-PtKrk_hnNfZatq4O0TN83ZiLTA3b9lDY7NyAEFsuyvDh-SfLpzKyLNPEQGIryY9RakxA8LXtmfaW0VvQMJlhcjRbz-Mug"/>
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
+<span class="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">Most Popular</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm p-1.5 rounded-full">
+<span class="material-symbols-outlined text-white text-sm">360</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-gray-900 dark:text-white text-lg font-bold">18' Step Van</h3>
+<p class="text-primary text-sm font-medium">Standard Heavy Duty</p>
+</div>
+<span class="text-gray-900 dark:text-white font-bold text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">$45k - $80k</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">The industry standard for full-service mobile kitchens. Maximum interior workspace and flat walls allow for easy equipment installation.</p>
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 mt-1">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+<span>18ft Cargo Length</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
+<span>Gasoline / V8</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">weight</span>
+<span>14,000lb GVWR</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>3-4 Staff</span>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4">
+<button class="w-full bg-gray-50 dark:bg-[#283039] hover:bg-gray-100 dark:hover:bg-[#323b46] text-gray-900 dark:text-white font-semibold py-2.5 rounded-xl transition-colors text-sm border border-gray-100 dark:border-transparent">
+                        Select Model
+                    </button>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden active:scale-[0.99] transition-transform duration-200 cursor-pointer">
+<div class="relative h-48 w-full">
+<img alt="Sprinter Van" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBdmSQMsRms9FlJTuxvRR8qAwymAeC5VfIpbHnZFoP59vHBdqYlJ7GKcsZfjOMnEaSE1pVCgvC5QqPDiJg6X0RyW5gsStJK5iWaujLOE5WuE3r2nTH5uWorg6LoQmeAgkcsH9cmT4W6BXYx3tAJW6scvEAaXEIdPc1NlnMtIWUIj-zvbKFZC-Z3B1uRu7HifURzMGNAFmnq3HVqE9tY6sNmJIUQ-5kWETdq51S5P6l57y9SDz0wjVhRjfvmwYMai1m9IWmWxo--sc"/>
+<div class="absolute top-3 left-3 bg-green-100/90 dark:bg-green-900/80 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
+<span class="text-xs font-bold text-green-800 dark:text-green-100 uppercase tracking-wider">Fuel Efficient</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-gray-900 dark:text-white text-lg font-bold">High-Roof Cargo Van</h3>
+<p class="text-primary text-sm font-medium">Urban &amp; Agile</p>
+</div>
+<span class="text-gray-900 dark:text-white font-bold text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">$55k - $90k</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Perfect for coffee shops, bakeries, and limited-menu concepts. Easy to drive, park, and navigate through tight city streets.</p>
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 mt-1">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+<span>12-14ft Cargo</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
+<span>Diesel / 25 MPG</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+<span>Modern Look</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>1-2 Staff</span>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4">
+<button class="w-full bg-gray-50 dark:bg-[#283039] hover:bg-gray-100 dark:hover:bg-[#323b46] text-gray-900 dark:text-white font-semibold py-2.5 rounded-xl transition-colors text-sm border border-gray-100 dark:border-transparent">
+                        Select Model
+                    </button>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden active:scale-[0.99] transition-transform duration-200 cursor-pointer">
+<div class="relative h-48 w-full">
+<img alt="Vintage Airstream Trailer" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4DsnZvo7UEt4VYHYY4xS9K_BaKW7bP2FErMPiujdhaiyUn3AR4x70LcrVBtkK7xj5rKhPBMA51-eB1K4py7oIAhUIrZB9XKWiCMYw-L1nb4UdkqbX0WqIm6YNuaaKGs0r7ktZqxoKWNPdAJTSTTGF4Ozb0wg-S5WBJNq71HaqSA0ajlbVUIo2nLUJH9bB55y5jZbBAT4a8fXWuWI7Sg7MLIvoDfmhwF9WHCIM3Ozixq-A_jo3DoQgJ5W6GqiU5IIf8uFB3iJV9ug"/>
+<div class="absolute top-3 left-3 bg-amber-100/90 dark:bg-amber-900/80 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
+<span class="text-xs font-bold text-amber-800 dark:text-amber-100 uppercase tracking-wider">Iconic Style</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-gray-900 dark:text-white text-lg font-bold">20' Vintage Trailer</h3>
+<p class="text-primary text-sm font-medium">Stationary &amp; Stylish</p>
+</div>
+<span class="text-gray-900 dark:text-white font-bold text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">$30k - $60k</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Retro styling that attracts customers instantly. Ideal for permanent spots or events. Requires a towing vehicle.</p>
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 mt-1">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+<span>20ft Length</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">rv_hookup</span>
+<span>Tow-Behind</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span>High Curb Appeal</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>2-3 Staff</span>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4">
+<button class="w-full bg-gray-50 dark:bg-[#283039] hover:bg-gray-100 dark:hover:bg-[#323b46] text-gray-900 dark:text-white font-semibold py-2.5 rounded-xl transition-colors text-sm border border-gray-100 dark:border-transparent">
+                        Select Model
+                    </button>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden active:scale-[0.99] transition-transform duration-200 cursor-pointer">
+<div class="relative h-48 w-full">
+<img alt="Mini Truck" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCzTyovhviA3Qg-Mp-jD4D3DSoW0OtdXmto7fhZ_nBmSEdlEt9GMeIbRyHisewqmJyd4ZYezTt_Q93GYnZJJB78zyZYCi-W26z9C6qbnGlo5us6RzYogmGtwEoO_GKguoHzfxeNsL-OfHv9SGKwU3ln8R_quDJa8iwG3ayIVC3NcpRs6o381LG3vmXTAqp-u-5p-r4J90j_w7uvOincolEi66pII3M0I94TvkZpcmYkVctmQxdEuwraxSQ-I7wyqbtvYR-QMnXy1k"/>
+<div class="absolute top-3 left-3 bg-purple-100/90 dark:bg-purple-900/80 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
+<span class="text-xs font-bold text-purple-800 dark:text-purple-100 uppercase tracking-wider">Compact</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-gray-900 dark:text-white text-lg font-bold">Kei Mini Truck</h3>
+<p class="text-primary text-sm font-medium">Beverage &amp; Snack</p>
+</div>
+<span class="text-gray-900 dark:text-white font-bold text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">$15k - $30k</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Unique, eye-catching mini truck ideal for pop-ups, farmers markets, and beverage services. Fits in any spot.</p>
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 mt-1">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+<span>10ft Length</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
+<span>Gas / 40 MPG</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+<span>Pop-up Ready</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>1 Staff</span>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4">
+<button class="w-full bg-gray-50 dark:bg-[#283039] hover:bg-gray-100 dark:hover:bg-[#323b46] text-gray-900 dark:text-white font-semibold py-2.5 rounded-xl transition-colors text-sm border border-gray-100 dark:border-transparent">
+                        Select Model
+                    </button>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-20 w-auto">
+<button class="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3.5 px-8 rounded-full shadow-lg shadow-primary/40 active:scale-95 transition-transform hover:brightness-110">
+<span class="material-symbols-outlined text-[20px]">compare_arrows</span>
+<span>Compare Selected</span>
+</button>
+</div>
+</div>
+
+</body></html>
