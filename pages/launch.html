@@ -1,217 +1,213 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Launch Strategy — Food Truck Launchpad</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/app.js" defer></script>
+<style>
+  .phase {
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:18px; padding:16px; position:relative; overflow:hidden;
+    margin: 0 14px 14px;
+  }
+  .phase.active::before {
+    content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+    background: linear-gradient(180deg,var(--brand-primary),var(--brand-accent));
+  }
+  .phase.locked { opacity:.7; }
+  .task { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px dashed var(--border); }
+  .task:last-child { border-bottom: none; }
+  .task input[type=checkbox] {
+    appearance:none; width:20px; height:20px; border-radius:6px;
+    border:2px solid var(--border-strong); background:transparent; cursor:pointer;
+    flex-shrink:0; position:relative; transition: background .15s ease;
+  }
+  .task input[type=checkbox]:checked {
+    background: linear-gradient(135deg, var(--brand-primary), #1a8df8);
+    border-color: transparent;
+  }
+  .task input[type=checkbox]:checked::after {
+    content:'check'; font-family:'Material Symbols Outlined';
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    color:white; font-size:14px;
+  }
+  .task input:checked + span { text-decoration: line-through; color: var(--fg-muted); }
+  .day-tile {
+    flex-shrink:0; width:60px; padding:10px 6px;
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:12px; text-align:center;
+  }
+  .day-tile.today { border-color: var(--brand-accent); box-shadow: var(--glow-accent); }
+  .day-tile .day { font-size:10px; color:var(--fg-muted); text-transform:uppercase; letter-spacing:.08em; }
+  .day-tile .num { font-size:18px; font-weight:800; }
+  .post-card {
+    flex-shrink:0; width:160px; padding:12px;
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:14px; position:relative; overflow:hidden;
+    height:130px; display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .post-card .gloss {
+    position:absolute; inset:0;
+    background: radial-gradient(circle at 100% 0%, rgba(255,255,255,.08), transparent 60%);
+    pointer-events:none;
+  }
+</style>
+</head>
+<body>
+<div class="app-shell has-bottom-nav">
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Food Truck Permits Screen</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#137fec",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#101922",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-<style>
-        /* Custom scrollbar hiding for clean mobile look */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
-<!-- Top App Bar -->
-<div class="sticky top-0 z-10 bg-background-light dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-<div class="flex items-center p-4 pb-2 justify-between">
-<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<div class="flex flex-col items-center">
-<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Permits &amp; Regulations</h2>
-<span class="text-gray-500 dark:text-gray-400 text-xs font-medium flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">location_on</span> Austin, TX
-                    </span>
+  <header class="appbar">
+    <a href="../index.html" class="icon-btn"><span class="material-symbols-outlined">arrow_back</span></a>
+    <div><h1>Launch Strategy</h1><span class="sub">Phase 7 · Go-to-market</span></div>
+    <button class="icon-btn"><span class="material-symbols-outlined">share</span></button>
+  </header>
+
+  <main style="padding: 14px 14px 0;">
+
+    <!-- Hero -->
+    <section class="card" style="padding:0;overflow:hidden;">
+      <div style="position:relative;height:170px;background:
+          linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.65)),
+          linear-gradient(135deg, #ff6b35 0%, #137fec 100%);">
+        <div style="position:absolute;inset:0;
+          background-image:
+            radial-gradient(circle at 25% 70%, rgba(255,255,255,.18), transparent 35%),
+            radial-gradient(circle at 80% 30%, rgba(255,255,255,.12), transparent 35%);">
+        </div>
+        <div style="position:absolute;bottom:14px;left:14px;right:14px;">
+          <span class="pill pill-accent">Pre-launch</span>
+          <h2 style="margin:8px 0 2px;font-size:24px;font-weight:900;color:white;letter-spacing:-.02em;">Build the hype.</h2>
+          <p style="margin:0;color:rgba(255,255,255,.85);font-size:13px;">Park your truck in your community's mind before you park it on the curb.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Score -->
+    <section class="cost-strip" style="margin-top:14px;">
+      <div>
+        <div class="label">Readiness</div>
+        <div class="value">60%</div>
+      </div>
+      <div style="flex:1;margin:0 14px;">
+        <div class="bar bar-glow"><i style="width:60%"></i></div>
+        <div class="row between mt-2">
+          <span class="txt-xs muted">3 of 5 modules done</span>
+          <span class="txt-xs muted">Launch in 21 days</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar strip -->
+    <div class="section-title"><h2>Next 7 days</h2><a href="#">Calendar</a></div>
+    <div style="display:flex;gap:8px;overflow-x:auto;padding: 0 14px 4px;" class="no-scrollbar">
+      <div class="day-tile today"><div class="day">Today</div><div class="num">14</div></div>
+      <div class="day-tile"><div class="day">Wed</div><div class="num">15</div></div>
+      <div class="day-tile"><div class="day">Thu</div><div class="num">16</div></div>
+      <div class="day-tile"><div class="day">Fri</div><div class="num">17</div></div>
+      <div class="day-tile"><div class="day">Sat</div><div class="num">18</div></div>
+      <div class="day-tile"><div class="day">Sun</div><div class="num">19</div></div>
+      <div class="day-tile"><div class="day">Mon</div><div class="num">20</div></div>
+    </div>
+
+    <!-- Posts scheduler -->
+    <div class="section-title"><h2>Upcoming posts</h2><a href="#">View all</a></div>
+    <div style="display:flex;gap:10px;overflow-x:auto;padding: 0 14px 6px;" class="no-scrollbar">
+      <article class="post-card">
+        <div class="gloss"></div>
+        <div class="row gap-2"><span class="pill pill-accent">Reels</span><span class="txt-xs muted">Tomorrow 4pm</span></div>
+        <div><div class="semi" style="font-size:13px;">Menu sneak: brisket tacos</div></div>
+      </article>
+      <article class="post-card">
+        <div class="gloss"></div>
+        <div class="row gap-2"><span class="pill pill-primary">Story</span><span class="txt-xs muted">Oct 17 · 9am</span></div>
+        <div><div class="semi" style="font-size:13px;">Meet the chef video</div></div>
+      </article>
+      <article class="post-card">
+        <div class="gloss"></div>
+        <div class="row gap-2"><span class="pill pill-success">Email</span><span class="txt-xs muted">Oct 19 · 7am</span></div>
+        <div><div class="semi" style="font-size:13px;">Founding-50 invite</div></div>
+      </article>
+      <article class="post-card" style="background:var(--surface-2);border-style:dashed;align-items:center;justify-content:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--fg-muted);">
+          <span class="material-symbols-outlined">add</span>
+          <span class="txt-xs semi">New post</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="section-title"><h2>Roadmap</h2></div>
+    <section class="phase">
+      <div class="row between">
+        <div>
+          <h3 style="margin:0;font-size:16px;font-weight:700;">Phase 1 · The Tease</h3>
+          <p class="muted txt-xs" style="margin:2px 0 0;">2 weeks out</p>
+        </div>
+        <span class="pill pill-success">2 / 3 done</span>
+      </div>
+      <div class="mt-3">
+        <label class="task"><input type="checkbox" checked><span class="semi txt-sm">Create Instagram account</span></label>
+        <label class="task"><input type="checkbox" checked><span class="semi txt-sm">Post 'Coming Soon' graphics</span></label>
+        <label class="task"><input type="checkbox"><span class="semi txt-sm">Claim Google Maps location</span></label>
+      </div>
+    </section>
+
+    <section class="phase active">
+      <div class="row between">
+        <div>
+          <h3 style="margin:0;font-size:16px;font-weight:700;">Phase 2 · Soft Launch</h3>
+          <p class="muted txt-xs" style="margin:2px 0 0;">1 week out · in progress</p>
+        </div>
+        <span class="pill pill-warn">1 / 3 done</span>
+      </div>
+      <div class="mt-3">
+        <label class="task"><input type="checkbox" checked><span class="semi txt-sm">Invite friends &amp; family list</span></label>
+        <label class="task"><input type="checkbox"><span class="semi txt-sm">Test POS &amp; payment flow</span></label>
+        <label class="task"><input type="checkbox"><span class="semi txt-sm">Gather first-day feedback form</span></label>
+      </div>
+    </section>
+
+    <section class="phase locked">
+      <div class="row between">
+        <div>
+          <h3 style="margin:0;font-size:16px;font-weight:700;color:var(--fg-muted);">Phase 3 · Grand Opening</h3>
+          <p class="muted txt-xs" style="margin:2px 0 0;">Launch day</p>
+        </div>
+        <span class="pill pill-muted"><span class="material-symbols-outlined" style="font-size:12px">lock</span>Locked</span>
+      </div>
+      <p class="muted txt-sm mt-3">Complete previous phases to unlock the Grand Opening checklist.</p>
+    </section>
+
+    <!-- Quick guides -->
+    <div class="section-title"><h2>Quick Guides</h2></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;padding: 0 14px;">
+      <a class="btn btn-ghost" href="#"><span class="material-symbols-outlined" style="font-size:16px;color:var(--brand-primary)">ads_click</span>Facebook Ads 101</a>
+      <a class="btn btn-ghost" href="regulations.html"><span class="material-symbols-outlined" style="font-size:16px;color:var(--brand-primary)">verified</span>Permit check</a>
+      <a class="btn btn-ghost" href="#"><span class="material-symbols-outlined" style="font-size:16px;color:var(--brand-primary)">groups</span>Hire your first staff</a>
+      <a class="btn btn-ghost" href="#"><span class="material-symbols-outlined" style="font-size:16px;color:var(--brand-primary)">campaign</span>Press list template</a>
+    </div>
+
+    <div style="padding:18px 14px;">
+      <button class="btn btn-accent btn-block" onclick="FTL.toast('Launch date locked in')">
+        <span class="material-symbols-outlined" style="font-size:18px">calendar_month</span>
+        Finalize Launch Date
+      </button>
+    </div>
+
+    <div style="height:24px"></div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="../index.html"><span class="material-symbols-outlined">dashboard</span><span>Home</span></a>
+    <a href="paint.html"><span class="material-symbols-outlined">brush</span><span>Design</span></a>
+    <a href="equipment.html"><span class="material-symbols-outlined">kitchen</span><span>Build</span></a>
+    <a href="permits.html"><span class="material-symbols-outlined">verified</span><span>Permits</span></a>
+    <a href="launch.html"><span class="material-symbols-outlined">rocket_launch</span><span>Launch</span></a>
+  </nav>
 </div>
-<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-<!-- Progress Section -->
-<div class="flex flex-col gap-3 p-4 pt-6">
-<div class="flex gap-6 justify-between items-end">
-<p class="text-gray-900 dark:text-white text-xl font-bold leading-normal">Your Progress</p>
-<p class="text-primary text-sm font-bold leading-normal bg-primary/10 px-2 py-1 rounded-md">4/12 Acquired</p>
-</div>
-<div class="relative h-4 w-full rounded-full bg-gray-200 dark:bg-[#3b4754] overflow-hidden">
-<div class="absolute top-0 left-0 h-full rounded-full bg-primary transition-all duration-1000 ease-out" style="width: 33%;">
-<div class="absolute top-0 left-0 h-full w-full bg-white/20 animate-pulse"></div>
-</div>
-</div>
-<div class="flex justify-between items-center mt-1">
-<p class="text-gray-500 dark:text-[#9dabb9] text-xs font-normal leading-normal">Keep going! You're 33% there.</p>
-<p class="text-gray-400 dark:text-gray-600 text-xs font-normal">Est. Launch: Nov 2023</p>
-</div>
-</div>
-<!-- Segmented Control -->
-<div class="px-4 py-2 sticky top-[72px] z-10 bg-background-light dark:bg-background-dark pb-4">
-<div class="flex h-12 w-full items-center justify-center rounded-xl bg-gray-200 dark:bg-[#283039] p-1">
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-sm font-medium group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">All</span>
-<input checked="" class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="All"/>
-</label>
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-sm font-medium group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">Pending</span>
-<input class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="Pending"/>
-</label>
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-sm font-medium group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">Completed</span>
-<input class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="Completed"/>
-</label>
-</div>
-</div>
-<!-- Content List -->
-<div class="flex flex-col pb-24">
-<!-- Section: Critical Compliance -->
-<div class="mt-2">
-<h2 class="text-gray-900 dark:text-white tracking-tight text-lg font-bold leading-tight px-4 pb-3 pt-2 flex items-center gap-2">
-<span class="material-symbols-outlined text-red-500" style="font-variation-settings: 'FILL' 1;">error</span>
-                    Critical Compliance
-                </h2>
-<!-- Item 1 -->
-<div class="group mx-4 mb-3 p-4 rounded-xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-transform duration-100 cursor-pointer">
-<div class="flex items-start gap-4 justify-between">
-<div class="flex items-start gap-3">
-<div class="text-white flex items-center justify-center rounded-lg bg-primary shrink-0 size-10 mt-1">
-<span class="material-symbols-outlined text-[20px]">assignment_ind</span>
-</div>
-<div class="flex flex-col">
-<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight mb-1">Business License</p>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Overdue</span>
-<span class="text-gray-500 dark:text-gray-400 text-xs">• $150</span>
-</div>
-<p class="text-gray-500 dark:text-[#9dabb9] text-xs font-normal line-clamp-2">Required for all businesses operating within city limits. Needs annual renewal.</p>
-</div>
-</div>
-<div class="shrink-0 flex flex-col items-end gap-2">
-<span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
-</div>
-</div>
-</div>
-<!-- Item 2 -->
-<div class="group mx-4 mb-3 p-4 rounded-xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-transform duration-100 cursor-pointer">
-<div class="flex items-start gap-4 justify-between">
-<div class="flex items-start gap-3">
-<div class="text-white flex items-center justify-center rounded-lg bg-[#ef4444] shrink-0 size-10 mt-1">
-<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
-</div>
-<div class="flex flex-col">
-<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight mb-1">Fire Safety Inspection</p>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Pending Review</span>
-<span class="text-gray-500 dark:text-gray-400 text-xs">• Due Oct 15</span>
-</div>
-<p class="text-gray-500 dark:text-[#9dabb9] text-xs font-normal line-clamp-2">Propane tank certification and suppression system check.</p>
-</div>
-</div>
-<div class="shrink-0">
-<span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Section: Health & Safety -->
-<div class="mt-4">
-<h2 class="text-gray-900 dark:text-white tracking-tight text-lg font-bold leading-tight px-4 pb-3 pt-2 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
-                    Health &amp; Safety
-                </h2>
-<!-- Item 3 -->
-<div class="group mx-4 mb-3 p-4 rounded-xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-transform duration-100 cursor-pointer opacity-60">
-<div class="flex items-start gap-4 justify-between">
-<div class="flex items-start gap-3">
-<div class="text-white flex items-center justify-center rounded-lg bg-[#10b981] shrink-0 size-10 mt-1">
-<span class="material-symbols-outlined text-[20px]">sanitizer</span>
-</div>
-<div class="flex flex-col">
-<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight mb-1 line-through decoration-gray-500">Food Handler Card</p>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Completed</span>
-</div>
-</div>
-</div>
-<div class="shrink-0 flex items-center justify-center size-8 rounded-full bg-green-500/20">
-<span class="material-symbols-outlined text-green-500 text-lg font-bold">check</span>
-</div>
-</div>
-</div>
-<!-- Item 4 -->
-<div class="group mx-4 mb-3 p-4 rounded-xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-transform duration-100 cursor-pointer">
-<div class="flex items-start gap-4 justify-between">
-<div class="flex items-start gap-3">
-<div class="text-white flex items-center justify-center rounded-lg bg-gray-400 dark:bg-gray-600 shrink-0 size-10 mt-1">
-<span class="material-symbols-outlined text-[20px]">water_drop</span>
-</div>
-<div class="flex flex-col">
-<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight mb-1">Water Discharge Permit</p>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Not Started</span>
-<span class="text-gray-500 dark:text-gray-400 text-xs">• $75</span>
-</div>
-</div>
-</div>
-<div class="shrink-0">
-<span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Empty State Illustration Placeholder (for demonstration if list was empty) -->
-<!-- 
-            <div class="flex flex-col items-center justify-center py-12 px-8 text-center hidden">
-                <div class="size-32 rounded-full bg-gray-100 dark:bg-[#1a222c] flex items-center justify-center mb-4">
-                     <span class="material-symbols-outlined text-4xl text-gray-400">check_circle</span>
-                </div>
-                <h3 class="text-gray-900 dark:text-white text-lg font-bold">All Caught Up!</h3>
-                <p class="text-gray-500 dark:text-gray-400 mt-2">You have no pending permits in this category.</p>
-            </div>
-            -->
-<!-- Add New Button (Bottom of list) -->
-<div class="mt-4 mx-4">
-<button class="w-full py-3 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 font-medium flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#1a222c] transition-colors">
-<span class="material-symbols-outlined">add</span>
-                    Add Custom Permit
-                </button>
-</div>
-</div>
-<!-- Floating Action Button for mobile add -->
-<button class="fixed bottom-6 right-6 z-20 size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/40 flex items-center justify-center active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-2xl">add</span>
-</button>
-</div>
-</body></html>
+</body>
+</html>
