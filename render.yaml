@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: foodtrucklaunchpad
+    runtime: static
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+    routes:
+      - type: rewrite
+        source: /paint
+        destination: /pages/paint.html
+      - type: rewrite
+        source: /chassis
+        destination: /pages/chassis.html
+      - type: rewrite
+        source: /interior
+        destination: /pages/interior.html
+      - type: rewrite
+        source: /equipment
+        destination: /pages/equipment.html
+      - type: rewrite
+        source: /permits
+        destination: /pages/permits.html
+      - type: rewrite
+        source: /regulations
+        destination: /pages/regulations.html
+      - type: rewrite
+        source: /suppliers
+        destination: /pages/suppliers.html
+      - type: rewrite
+        source: /launch
+        destination: /pages/launch.html

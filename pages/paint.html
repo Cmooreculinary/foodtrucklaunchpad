@@ -1,255 +1,585 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Choose Your Chassis</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#137fec",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#101922",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-<style>.no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Paint Shop — Food Truck Launchpad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/app.js" defer></script>
 <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
-<div class="sticky top-0 z-20 bg-background-light dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-<div class="flex items-center p-4 pb-2 justify-between">
-<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<div class="flex flex-col items-center">
-<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Choose Your Chassis</h2>
-<span class="text-gray-500 dark:text-gray-400 text-xs font-medium flex items-center gap-1">
-                        Phase 2: Vehicle Selection
-                    </span>
-</div>
-<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined">tune</span>
-</button>
-</div>
-<div class="px-4 py-2 pb-3">
-<div class="flex h-10 w-full items-center justify-center rounded-lg bg-gray-200 dark:bg-[#283039] p-1">
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-xs font-semibold group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">All</span>
-<input checked="" class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="All"/>
-</label>
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-xs font-semibold group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">Trucks</span>
-<input class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="Trucks"/>
-</label>
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-xs font-semibold group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">Trailers</span>
-<input class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="Trailers"/>
-</label>
-</div>
-</div>
-</div>
-<div class="flex flex-col p-4 gap-5 pb-24">
-<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden active:scale-[0.99] transition-transform duration-200 cursor-pointer">
-<div class="relative h-48 w-full">
-<img alt="Step Van Food Truck" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTeR3G-KeD93RrKCRPMdiD6gvjAwKkNxMMqajMrnnWD1kLtY1DIU86XU8njxt7eKIhpI6S3Kbt9fV0Mbng6LU5dT5IdpMR_y8TWpIC1f46icZbRSDtnl2e_31pc1v3JNGWT9BE-0tPv_ggsYUQjBjLTGXhsFDu814N6dzJyCTeu_CWL-PtKrk_hnNfZatq4O0TN83ZiLTA3b9lDY7NyAEFsuyvDh-SfLpzKyLNPEQGIryY9RakxA8LXtmfaW0VvQMJlhcjRbz-Mug"/>
-<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
-<span class="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">Most Popular</span>
-</div>
-<div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm p-1.5 rounded-full">
-<span class="material-symbols-outlined text-white text-sm">360</span>
-</div>
-</div>
-<div class="p-4 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<div>
-<h3 class="text-gray-900 dark:text-white text-lg font-bold">18' Step Van</h3>
-<p class="text-primary text-sm font-medium">Standard Heavy Duty</p>
-</div>
-<span class="text-gray-900 dark:text-white font-bold text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">$45k - $80k</span>
-</div>
-<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">The industry standard for full-service mobile kitchens. Maximum interior workspace and flat walls allow for easy equipment installation.</p>
-<div class="grid grid-cols-2 gap-y-2 gap-x-4 mt-1">
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">straighten</span>
-<span>18ft Cargo Length</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
-<span>Gasoline / V8</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">weight</span>
-<span>14,000lb GVWR</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">group</span>
-<span>3-4 Staff</span>
-</div>
-</div>
-</div>
-<div class="px-4 pb-4">
-<button class="w-full bg-gray-50 dark:bg-[#283039] hover:bg-gray-100 dark:hover:bg-[#323b46] text-gray-900 dark:text-white font-semibold py-2.5 rounded-xl transition-colors text-sm border border-gray-100 dark:border-transparent">
-                        Select Model
-                    </button>
-</div>
-</div>
-<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden active:scale-[0.99] transition-transform duration-200 cursor-pointer">
-<div class="relative h-48 w-full">
-<img alt="Sprinter Van" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBdmSQMsRms9FlJTuxvRR8qAwymAeC5VfIpbHnZFoP59vHBdqYlJ7GKcsZfjOMnEaSE1pVCgvC5QqPDiJg6X0RyW5gsStJK5iWaujLOE5WuE3r2nTH5uWorg6LoQmeAgkcsH9cmT4W6BXYx3tAJW6scvEAaXEIdPc1NlnMtIWUIj-zvbKFZC-Z3B1uRu7HifURzMGNAFmnq3HVqE9tY6sNmJIUQ-5kWETdq51S5P6l57y9SDz0wjVhRjfvmwYMai1m9IWmWxo--sc"/>
-<div class="absolute top-3 left-3 bg-green-100/90 dark:bg-green-900/80 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
-<span class="text-xs font-bold text-green-800 dark:text-green-100 uppercase tracking-wider">Fuel Efficient</span>
-</div>
-</div>
-<div class="p-4 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<div>
-<h3 class="text-gray-900 dark:text-white text-lg font-bold">High-Roof Cargo Van</h3>
-<p class="text-primary text-sm font-medium">Urban &amp; Agile</p>
-</div>
-<span class="text-gray-900 dark:text-white font-bold text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">$55k - $90k</span>
-</div>
-<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Perfect for coffee shops, bakeries, and limited-menu concepts. Easy to drive, park, and navigate through tight city streets.</p>
-<div class="grid grid-cols-2 gap-y-2 gap-x-4 mt-1">
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">straighten</span>
-<span>12-14ft Cargo</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
-<span>Diesel / 25 MPG</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">palette</span>
-<span>Modern Look</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">group</span>
-<span>1-2 Staff</span>
-</div>
-</div>
-</div>
-<div class="px-4 pb-4">
-<button class="w-full bg-gray-50 dark:bg-[#283039] hover:bg-gray-100 dark:hover:bg-[#323b46] text-gray-900 dark:text-white font-semibold py-2.5 rounded-xl transition-colors text-sm border border-gray-100 dark:border-transparent">
-                        Select Model
-                    </button>
-</div>
-</div>
-<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden active:scale-[0.99] transition-transform duration-200 cursor-pointer">
-<div class="relative h-48 w-full">
-<img alt="Vintage Airstream Trailer" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4DsnZvo7UEt4VYHYY4xS9K_BaKW7bP2FErMPiujdhaiyUn3AR4x70LcrVBtkK7xj5rKhPBMA51-eB1K4py7oIAhUIrZB9XKWiCMYw-L1nb4UdkqbX0WqIm6YNuaaKGs0r7ktZqxoKWNPdAJTSTTGF4Ozb0wg-S5WBJNq71HaqSA0ajlbVUIo2nLUJH9bB55y5jZbBAT4a8fXWuWI7Sg7MLIvoDfmhwF9WHCIM3Ozixq-A_jo3DoQgJ5W6GqiU5IIf8uFB3iJV9ug"/>
-<div class="absolute top-3 left-3 bg-amber-100/90 dark:bg-amber-900/80 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
-<span class="text-xs font-bold text-amber-800 dark:text-amber-100 uppercase tracking-wider">Iconic Style</span>
-</div>
-</div>
-<div class="p-4 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<div>
-<h3 class="text-gray-900 dark:text-white text-lg font-bold">20' Vintage Trailer</h3>
-<p class="text-primary text-sm font-medium">Stationary &amp; Stylish</p>
-</div>
-<span class="text-gray-900 dark:text-white font-bold text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">$30k - $60k</span>
-</div>
-<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Retro styling that attracts customers instantly. Ideal for permanent spots or events. Requires a towing vehicle.</p>
-<div class="grid grid-cols-2 gap-y-2 gap-x-4 mt-1">
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">straighten</span>
-<span>20ft Length</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">rv_hookup</span>
-<span>Tow-Behind</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">photo_camera</span>
-<span>High Curb Appeal</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">group</span>
-<span>2-3 Staff</span>
-</div>
-</div>
-</div>
-<div class="px-4 pb-4">
-<button class="w-full bg-gray-50 dark:bg-[#283039] hover:bg-gray-100 dark:hover:bg-[#323b46] text-gray-900 dark:text-white font-semibold py-2.5 rounded-xl transition-colors text-sm border border-gray-100 dark:border-transparent">
-                        Select Model
-                    </button>
-</div>
-</div>
-<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden active:scale-[0.99] transition-transform duration-200 cursor-pointer">
-<div class="relative h-48 w-full">
-<img alt="Mini Truck" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCzTyovhviA3Qg-Mp-jD4D3DSoW0OtdXmto7fhZ_nBmSEdlEt9GMeIbRyHisewqmJyd4ZYezTt_Q93GYnZJJB78zyZYCi-W26z9C6qbnGlo5us6RzYogmGtwEoO_GKguoHzfxeNsL-OfHv9SGKwU3ln8R_quDJa8iwG3ayIVC3NcpRs6o381LG3vmXTAqp-u-5p-r4J90j_w7uvOincolEi66pII3M0I94TvkZpcmYkVctmQxdEuwraxSQ-I7wyqbtvYR-QMnXy1k"/>
-<div class="absolute top-3 left-3 bg-purple-100/90 dark:bg-purple-900/80 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
-<span class="text-xs font-bold text-purple-800 dark:text-purple-100 uppercase tracking-wider">Compact</span>
-</div>
-</div>
-<div class="p-4 flex flex-col gap-3">
-<div class="flex justify-between items-start">
-<div>
-<h3 class="text-gray-900 dark:text-white text-lg font-bold">Kei Mini Truck</h3>
-<p class="text-primary text-sm font-medium">Beverage &amp; Snack</p>
-</div>
-<span class="text-gray-900 dark:text-white font-bold text-sm bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md">$15k - $30k</span>
-</div>
-<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Unique, eye-catching mini truck ideal for pop-ups, farmers markets, and beverage services. Fits in any spot.</p>
-<div class="grid grid-cols-2 gap-y-2 gap-x-4 mt-1">
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">straighten</span>
-<span>10ft Length</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
-<span>Gas / 40 MPG</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">storefront</span>
-<span>Pop-up Ready</span>
-</div>
-<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
-<span class="material-symbols-outlined text-[18px]">group</span>
-<span>1 Staff</span>
-</div>
-</div>
-</div>
-<div class="px-4 pb-4">
-<button class="w-full bg-gray-50 dark:bg-[#283039] hover:bg-gray-100 dark:hover:bg-[#323b46] text-gray-900 dark:text-white font-semibold py-2.5 rounded-xl transition-colors text-sm border border-gray-100 dark:border-transparent">
-                        Select Model
-                    </button>
-</div>
-</div>
-</div>
-<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-20 w-auto">
-<button class="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3.5 px-8 rounded-full shadow-lg shadow-primary/40 active:scale-95 transition-transform hover:brightness-110">
-<span class="material-symbols-outlined text-[20px]">compare_arrows</span>
-<span>Compare Selected</span>
-</button>
-</div>
+  .stage {
+    position: relative;
+    border-radius: 22px;
+    background:
+      radial-gradient(120% 80% at 50% 0%, rgba(255,107,53,.18), transparent 60%),
+      radial-gradient(120% 80% at 50% 100%, rgba(19,127,236,.18), transparent 60%),
+      linear-gradient(180deg, #0e1722 0%, #131c26 100%);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    padding: 14px 14px 8px;
+  }
+  .stage::before {
+    content:''; position:absolute; inset:0;
+    background: repeating-linear-gradient(0deg, transparent 0 22px, rgba(255,255,255,.025) 22px 23px);
+    pointer-events: none;
+  }
+  .stage::after {
+    content:''; position:absolute; left:6%; right:6%; bottom:-12px; height:30px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0,0,0,.6), transparent 70%);
+    filter: blur(8px); border-radius:50%; pointer-events:none;
+  }
+  .preview-controls { display:flex; gap:6px; position:absolute; top:12px; right:12px; z-index:2; }
+  .ctrl-pill {
+    display:inline-flex; align-items:center; gap:6px;
+    padding:6px 10px; border-radius:999px;
+    background: rgba(0,0,0,.5); backdrop-filter: blur(8px);
+    color:#fff; font-size:11px; font-weight:700; letter-spacing:.04em;
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .ctrl-pill .material-symbols-outlined{font-size:14px}
+  .finish-strip {
+    position:absolute; left:12px; bottom:14px; z-index:2;
+    display:flex; gap:6px; align-items:center;
+  }
+  .chip-mini {
+    background: rgba(0,0,0,.5); color:#fff;
+    border-radius:999px; padding:5px 9px;
+    font-size:11px; font-weight:700;
+    border:1px solid rgba(255,255,255,.08);
+    display:inline-flex; align-items:center; gap:4px;
+  }
+  .chip-mini .material-symbols-outlined{font-size:12px}
+  .layer-row { display:flex; gap:8px; padding:14px 14px 4px; overflow-x:auto; }
+  .layer-chip {
+    flex-shrink:0; display:flex; align-items:center; gap:8px;
+    padding:8px 12px; border-radius:14px;
+    background: var(--surface); color:var(--fg-soft);
+    border:1px solid var(--border);
+    font-size:12px; font-weight:700;
+  }
+  .layer-chip .dot {
+    width:18px;height:18px;border-radius:6px;
+    border:2px solid rgba(255,255,255,.85);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.4);
+  }
+  .layer-chip[aria-pressed="true"] {
+    background: linear-gradient(135deg,var(--brand-primary),#1a8df8);
+    color:white; border-color:transparent;
+    box-shadow: var(--glow-primary);
+  }
+  .palette { display:grid; grid-template-columns:repeat(7, 1fr); gap:10px; padding: 6px 14px 4px; }
+  .palette .swatch { width: 100%; aspect-ratio: 1/1; height: auto; }
+  .preset {
+    flex-shrink:0; width:140px; border-radius:16px; overflow:hidden;
+    border:1px solid var(--border); background:var(--surface);
+    cursor:pointer; transition:transform .15s ease, border-color .15s ease;
+  }
+  .preset:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+  .preset[aria-pressed="true"] { border-color: var(--brand-accent); box-shadow: var(--glow-accent); }
+  .preset .swatchbar { display:flex; height:64px; }
+  .preset .swatchbar > div { flex:1; }
+  .preset .meta { padding:8px 10px; }
+  .preset .meta h5 { margin:0; font-size:12px; font-weight:700; }
+  .preset .meta span { font-size:10px; color:var(--fg-muted); }
+  .decals { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding: 6px 14px 0; }
+  .decal {
+    aspect-ratio:1/1; border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--surface); border:1px solid var(--border);
+    color:var(--fg-soft); transition:all .15s ease;
+  }
+  .decal[aria-pressed="true"] {
+    background: linear-gradient(135deg, rgba(255,107,53,.18), rgba(255,210,63,.15));
+    border-color: var(--brand-accent); color: var(--brand-accent-soft);
+  }
+  .decal .material-symbols-outlined { font-size: 26px; }
+  .brand-block { padding: 6px 14px 0; display:flex; flex-direction:column; gap:10px; }
+  .brand-block label { font-size:11px; color:var(--fg-muted); text-transform:uppercase; letter-spacing:.08em; font-weight:700; }
+  .slider-row { display:flex; align-items:center; gap:10px; padding:10px 14px; }
+  .slider-row .label { width:64px; font-size:11px; color:var(--fg-muted); text-transform:uppercase; letter-spacing:.08em; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="app-shell has-bottom-nav">
+
+  <header class="appbar">
+    <a href="../index.html" class="icon-btn" aria-label="Back"><span class="material-symbols-outlined">arrow_back</span></a>
+    <div>
+      <h1>Paint Shop</h1>
+      <span class="sub">Phase 3 · Exterior Design</span>
+    </div>
+    <button class="icon-btn" aria-label="Undo" id="undo-btn"><span class="material-symbols-outlined">undo</span></button>
+  </header>
+
+  <main style="padding:14px 14px 0;">
+
+    <section class="stage">
+      <div class="preview-controls">
+        <span class="ctrl-pill"><span class="material-symbols-outlined">visibility</span>Side</span>
+        <button class="ctrl-pill" id="zoom-btn"><span class="material-symbols-outlined">fullscreen</span>Full</button>
+      </div>
+
+      <div id="truck-wrap" class="truck-glow" style="--body:#FF6B35;--accent:#0A0F1A;--win:#1B2A3A;--wheel:#111;">
+        <svg id="truck" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+          <defs>
+            <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="white" stop-opacity=".18"/>
+              <stop offset="55%" stop-color="white" stop-opacity="0"/>
+              <stop offset="100%" stop-color="black" stop-opacity=".25"/>
+            </linearGradient>
+            <linearGradient id="glassGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#cfe6ff" stop-opacity=".85"/>
+              <stop offset="100%" stop-color="#5b7c9b" stop-opacity=".55"/>
+            </linearGradient>
+            <pattern id="stripes" patternUnits="userSpaceOnUse" width="14" height="14" patternTransform="rotate(45)">
+              <rect width="14" height="14" fill="transparent"/>
+              <rect width="7" height="14" fill="rgba(255,255,255,.18)"/>
+            </pattern>
+            <pattern id="dots" patternUnits="userSpaceOnUse" width="14" height="14">
+              <circle cx="7" cy="7" r="2" fill="rgba(255,255,255,.25)"/>
+            </pattern>
+            <linearGradient id="gradientFill" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#ff6b35"/>
+              <stop offset="100%" stop-color="#ffd23f"/>
+            </linearGradient>
+          </defs>
+
+          <ellipse cx="240" cy="200" rx="200" ry="6" fill="black" opacity=".35"/>
+
+          <g id="body-group">
+            <rect id="body-fill" x="42" y="50" width="320" height="120" rx="14" fill="var(--body)"/>
+            <path id="cab-fill" d="M 362 90 L 362 170 L 450 170 L 450 116 L 432 90 Z" fill="var(--body)"/>
+            <rect x="42" y="50" width="320" height="120" rx="14" fill="url(#bodyGrad)" pointer-events="none"/>
+            <path d="M 362 90 L 362 170 L 450 170 L 450 116 L 432 90 Z" fill="url(#bodyGrad)" pointer-events="none"/>
+          </g>
+
+          <g id="pattern-layer" style="display:none">
+            <rect x="42" y="50" width="320" height="120" rx="14" fill="url(#stripes)" pointer-events="none"/>
+          </g>
+
+          <g id="accent-group">
+            <rect id="accent-fill" x="42" y="118" width="320" height="20" fill="var(--accent)"/>
+          </g>
+
+          <g id="window-group">
+            <rect id="window-frame" x="80" y="66" width="220" height="60" rx="6" fill="var(--win)"/>
+            <rect x="86" y="72" width="208" height="48" rx="3" fill="url(#glassGrad)"/>
+            <line x1="190" y1="72" x2="190" y2="120" stroke="rgba(0,0,0,.25)" stroke-width="1"/>
+            <rect x="78" y="60" width="224" height="8" rx="2" fill="var(--accent)"/>
+            <path d="M 78 68 L 86 78 L 94 68 L 102 78 L 110 68 L 118 78 L 126 68 L 134 78 L 142 68 L 150 78 L 158 68 L 166 78 L 174 68 L 182 78 L 190 68 L 198 78 L 206 68 L 214 78 L 222 68 L 230 78 L 238 68 L 246 78 L 254 68 L 262 78 L 270 68 L 278 78 L 286 68 L 294 78 L 302 68 Z" fill="var(--accent)" opacity=".85"/>
+          </g>
+
+          <path d="M 370 96 L 430 96 L 444 116 L 370 116 Z" fill="url(#glassGrad)" stroke="var(--win)" stroke-width="2"/>
+          <rect x="368" y="118" width="80" height="18" fill="var(--accent)" opacity=".75"/>
+
+          <line x1="370" y1="120" x2="370" y2="170" stroke="rgba(0,0,0,.3)" stroke-width="1"/>
+          <circle cx="378" cy="148" r="2" fill="rgba(0,0,0,.6)"/>
+
+          <ellipse cx="446" cy="146" rx="6" ry="4" fill="#fffbe8" stroke="#fff" stroke-width="1"/>
+
+          <rect x="36" y="158" width="416" height="12" rx="3" fill="rgba(0,0,0,.4)"/>
+
+          <text id="brand-text" x="190" y="48" text-anchor="middle"
+                font-family="Inter, sans-serif" font-weight="900" font-size="22"
+                fill="var(--accent)" letter-spacing="-.5">Smoke &amp; Sizzle</text>
+          <text id="tagline-text" x="190" y="156" text-anchor="middle"
+                font-family="Inter, sans-serif" font-weight="700" font-size="9"
+                fill="rgba(255,255,255,.85)" letter-spacing="2">SLOW-COOKED · ALWAYS</text>
+
+          <g id="decal-layer"></g>
+
+          <g id="wheels">
+            <circle cx="120" cy="178" r="22" fill="var(--wheel)"/>
+            <circle cx="120" cy="178" r="10" fill="#1a1a1a" stroke="#888" stroke-width="1.5"/>
+            <circle cx="120" cy="178" r="3" fill="#888"/>
+            <circle cx="320" cy="178" r="22" fill="var(--wheel)"/>
+            <circle cx="320" cy="178" r="10" fill="#1a1a1a" stroke="#888" stroke-width="1.5"/>
+            <circle cx="320" cy="178" r="3" fill="#888"/>
+            <circle cx="420" cy="178" r="22" fill="var(--wheel)"/>
+            <circle cx="420" cy="178" r="10" fill="#1a1a1a" stroke="#888" stroke-width="1.5"/>
+            <circle cx="420" cy="178" r="3" fill="#888"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="finish-strip">
+        <span class="chip-mini"><span class="material-symbols-outlined">auto_awesome</span><span id="finish-label">Gloss</span></span>
+        <span class="chip-mini"><span class="material-symbols-outlined">payments</span>$<span id="paint-cost">3,420</span></span>
+      </div>
+    </section>
+
+    <div class="layer-row no-scrollbar" role="tablist" aria-label="Paint layer">
+      <button class="layer-chip" aria-pressed="true" data-layer="body">
+        <span class="dot" id="dot-body" style="background:#FF6B35"></span>Body
+      </button>
+      <button class="layer-chip" aria-pressed="false" data-layer="accent">
+        <span class="dot" id="dot-accent" style="background:#0A0F1A"></span>Accent
+      </button>
+      <button class="layer-chip" aria-pressed="false" data-layer="win">
+        <span class="dot" id="dot-win" style="background:#1B2A3A"></span>Window
+      </button>
+      <button class="layer-chip" aria-pressed="false" data-layer="wheel">
+        <span class="dot" id="dot-wheel" style="background:#111"></span>Wheels
+      </button>
+    </div>
+
+    <div class="section-title">
+      <h2 id="palette-title">Body Color</h2>
+      <button class="txt-xs semi" style="background:transparent;border:none;color:var(--brand-primary);" id="hex-btn">+ Custom</button>
+    </div>
+    <input type="color" id="hex-picker" value="#FF6B35" style="position:absolute;opacity:0;pointer-events:none;width:0;height:0;" aria-hidden="true">
+
+    <div class="palette" id="palette"></div>
+
+    <div class="slider-row" style="margin-top:6px;">
+      <span class="label">Tint</span>
+      <input type="range" min="-30" max="30" value="0" id="tint" class="slider">
+      <span class="txt-xs muted" id="tint-val" style="width:34px;text-align:right;">0</span>
+    </div>
+
+    <div class="section-title"><h2>Livery Pattern</h2></div>
+    <div class="tabs" id="pattern-tabs" role="tablist">
+      <button aria-pressed="true" data-pattern="solid">Solid</button>
+      <button aria-pressed="false" data-pattern="stripes">Diagonal Stripes</button>
+      <button aria-pressed="false" data-pattern="dots">Polka Dots</button>
+      <button aria-pressed="false" data-pattern="gradient">Gradient</button>
+    </div>
+
+    <div class="section-title"><h2>Finish</h2></div>
+    <div style="padding: 0 14px;">
+      <div class="seg" id="finish-seg">
+        <button aria-pressed="true"  data-finish="gloss">Gloss</button>
+        <button aria-pressed="false" data-finish="matte">Matte</button>
+        <button aria-pressed="false" data-finish="metallic">Metallic</button>
+        <button aria-pressed="false" data-finish="wrap">Vinyl Wrap</button>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2>Brand Presets</h2>
+      <span class="pill pill-accent">curated</span>
+    </div>
+    <div style="display:flex; gap:12px; overflow-x:auto; padding: 0 14px 6px;" class="no-scrollbar" id="presets"></div>
+
+    <div class="section-title"><h2>Brand on Truck</h2></div>
+    <div class="brand-block">
+      <div>
+        <label for="brand-name">Truck Name</label>
+        <input class="input mt-1" id="brand-name" value="Smoke &amp; Sizzle" maxlength="20"/>
+      </div>
+      <div>
+        <label for="tagline">Tagline</label>
+        <input class="input mt-1" id="tagline" value="SLOW-COOKED · ALWAYS" maxlength="32"/>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2>Decals & Icons</h2>
+      <span class="txt-xs muted" id="decal-count">2 selected</span>
+    </div>
+    <div class="decals" id="decals">
+      <button class="decal" data-decal="bbq"    aria-pressed="true"><span class="material-symbols-outlined">outdoor_grill</span></button>
+      <button class="decal" data-decal="flame"  aria-pressed="true"><span class="material-symbols-outlined">local_fire_department</span></button>
+      <button class="decal" data-decal="leaf"   aria-pressed="false"><span class="material-symbols-outlined">eco</span></button>
+      <button class="decal" data-decal="coffee" aria-pressed="false"><span class="material-symbols-outlined">coffee</span></button>
+      <button class="decal" data-decal="taco"   aria-pressed="false"><span class="material-symbols-outlined">lunch_dining</span></button>
+      <button class="decal" data-decal="pizza"  aria-pressed="false"><span class="material-symbols-outlined">local_pizza</span></button>
+      <button class="decal" data-decal="ice"    aria-pressed="false"><span class="material-symbols-outlined">icecream</span></button>
+      <button class="decal" data-decal="ramen"  aria-pressed="false"><span class="material-symbols-outlined">ramen_dining</span></button>
+    </div>
+
+    <div class="section-title"><h2>Cost Breakdown</h2></div>
+    <div class="card card-tight" style="margin: 0 14px;">
+      <div class="row between"><span class="muted txt-sm">Base paint (2 layers)</span><span class="semi" id="line-base">$1,800</span></div>
+      <div class="row between mt-2"><span class="muted txt-sm">Finish premium</span><span class="semi" id="line-finish">$420</span></div>
+      <div class="row between mt-2"><span class="muted txt-sm">Custom livery</span><span class="semi" id="line-livery">$0</span></div>
+      <div class="row between mt-2"><span class="muted txt-sm">Decals (<span id="line-decal-count">2</span>)</span><span class="semi" id="line-decal">$200</span></div>
+      <div class="row between mt-2"><span class="muted txt-sm">Lettering &amp; brand</span><span class="semi">$1,000</span></div>
+      <div style="height:1px;background:var(--border);margin:12px 0;"></div>
+      <div class="row between">
+        <span class="bold">Total</span>
+        <span class="bold" id="line-total" style="font-size:18px;color:var(--brand-accent);">$3,420</span>
+      </div>
+    </div>
+
+    <div style="padding: 18px 14px 8px;">
+      <button class="btn btn-primary btn-block" id="save-btn">
+        <span class="material-symbols-outlined" style="font-size:18px">check_circle</span>
+        Save Design & Continue
+      </button>
+      <div class="row gap-2 mt-3">
+        <button class="btn btn-ghost" style="flex:1;" id="share-btn">
+          <span class="material-symbols-outlined" style="font-size:18px">ios_share</span>
+          Share
+        </button>
+        <button class="btn btn-ghost" style="flex:1;" id="render-btn">
+          <span class="material-symbols-outlined" style="font-size:18px">view_in_ar</span>
+          3D Render
+        </button>
+      </div>
+    </div>
+
+    <div style="height: 24px;"></div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="../index.html"><span class="material-symbols-outlined">dashboard</span><span>Home</span></a>
+    <a href="paint.html"><span class="material-symbols-outlined">brush</span><span>Design</span></a>
+    <a href="equipment.html"><span class="material-symbols-outlined">kitchen</span><span>Build</span></a>
+    <a href="permits.html"><span class="material-symbols-outlined">verified</span><span>Permits</span></a>
+    <a href="launch.html"><span class="material-symbols-outlined">rocket_launch</span><span>Launch</span></a>
+  </nav>
 </div>
 
-</body></html>
+<script>
+  const palette = [
+    '#FF6B35','#FF3D3D','#FFD23F','#F59E0B','#E11D48','#7C2D12','#FFE9D6',
+    '#137FEC','#0EA5E9','#2DD4BF','#10B981','#22C55E','#1E40AF','#0A2540',
+    '#0A0F1A','#1F2937','#4B5563','#9CA3AF','#E5E7EB','#FFFFFF','#171717',
+    '#FECACA','#FED7AA','#FEF3C7','#D9F99D','#A7F3D0','#BAE6FD','#C7D2FE'
+  ];
+
+  const presets = [
+    { id:'classic',  name:'Classic Diner',  tag:'Red & cream',     body:'#E11D48', accent:'#FFE9D6', win:'#0A0F1A', wheel:'#111' },
+    { id:'sunset',   name:'Sunset Drive',   tag:'Orange gradient', body:'#FF6B35', accent:'#FFD23F', win:'#1B2A3A', wheel:'#111' },
+    { id:'midnight', name:'Midnight Ramen', tag:'Neon stripe',     body:'#0A0F1A', accent:'#137FEC', win:'#1B2A3A', wheel:'#0A0F1A' },
+    { id:'forest',   name:'Forest Bowl',    tag:'Botanical',       body:'#065F46', accent:'#FFD23F', win:'#0A0F1A', wheel:'#111' },
+    { id:'cream',    name:'Soft Bakery',    tag:'Cream & sage',    body:'#FEF3C7', accent:'#65A30D', win:'#0A0F1A', wheel:'#1F2937' },
+    { id:'mono',     name:'Stealth',        tag:'Matte mono',      body:'#1F2937', accent:'#9CA3AF', win:'#0A0F1A', wheel:'#0A0F1A' }
+  ];
+
+  const layerLabels = { body:'Body Color', accent:'Accent Color', win:'Window Frame', wheel:'Wheel Color' };
+  const state = FTL.state.paint;
+  let activeLayer = 'body';
+  const history = [];
+
+  const wrap   = document.getElementById('truck-wrap');
+  const brandText = document.getElementById('brand-text');
+  const tagText   = document.getElementById('tagline-text');
+  const bodyRect = document.getElementById('body-fill');
+  const cabPath  = document.getElementById('cab-fill');
+
+  function pushHistory() { history.push(JSON.parse(JSON.stringify(state))); if (history.length > 30) history.shift(); }
+
+  function applyAll() {
+    wrap.style.setProperty('--body', state.body);
+    wrap.style.setProperty('--accent', state.accent);
+    wrap.style.setProperty('--win', state.windowFrame);
+    wrap.style.setProperty('--wheel', state.wheels);
+    document.getElementById('dot-body').style.background = state.body;
+    document.getElementById('dot-accent').style.background = state.accent;
+    document.getElementById('dot-win').style.background = state.windowFrame;
+    document.getElementById('dot-wheel').style.background = state.wheels;
+    brandText.textContent = state.brandName;
+    tagText.textContent = (state.tagline || '').toUpperCase();
+    applyPattern();
+    applyFinish();
+    renderDecals();
+    recomputeCost();
+  }
+
+  function setLayerColor(hex) {
+    pushHistory();
+    if (activeLayer === 'body')   state.body = hex;
+    if (activeLayer === 'accent') state.accent = hex;
+    if (activeLayer === 'win')    state.windowFrame = hex;
+    if (activeLayer === 'wheel')  state.wheels = hex;
+    applyAll();
+    renderPalette();
+    FTL.save();
+  }
+
+  function setActiveLayer(layer) {
+    activeLayer = layer;
+    document.querySelectorAll('.layer-chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.layer === layer ? 'true' : 'false'));
+    document.getElementById('palette-title').textContent = layerLabels[layer];
+    document.getElementById('hex-picker').value = currentLayerColor();
+    renderPalette();
+  }
+
+  function currentLayerColor() {
+    return ({ body:state.body, accent:state.accent, win:state.windowFrame, wheel:state.wheels })[activeLayer];
+  }
+
+  function renderPalette() {
+    const grid = document.getElementById('palette');
+    const cur = currentLayerColor().toUpperCase();
+    grid.innerHTML = palette.map(c => `
+      <button class="swatch" style="background:${c}" aria-pressed="${c.toUpperCase()===cur}" data-color="${c}" aria-label="${c}"></button>
+    `).join('');
+    grid.querySelectorAll('.swatch').forEach(b => b.addEventListener('click', () => setLayerColor(b.dataset.color)));
+  }
+
+  function renderPresets() {
+    const c = document.getElementById('presets');
+    c.innerHTML = presets.map(p => `
+      <button class="preset" data-id="${p.id}" aria-pressed="false" aria-label="${p.name}">
+        <div class="swatchbar">
+          <div style="background:${p.body}"></div>
+          <div style="background:${p.accent}"></div>
+          <div style="background:${p.win}"></div>
+        </div>
+        <div class="meta">
+          <h5>${p.name}</h5>
+          <span>${p.tag}</span>
+        </div>
+      </button>
+    `).join('');
+    c.querySelectorAll('.preset').forEach(b => b.addEventListener('click', () => {
+      const p = presets.find(x => x.id === b.dataset.id);
+      pushHistory();
+      state.body = p.body; state.accent = p.accent; state.windowFrame = p.win; state.wheels = p.wheel;
+      applyAll();
+      renderPalette();
+      c.querySelectorAll('.preset').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+      FTL.toast('Preset applied: ' + p.name);
+      FTL.save();
+    }));
+  }
+
+  function applyPattern() {
+    const pl = document.getElementById('pattern-layer');
+    const overlay = pl.querySelector('rect');
+    if (state.pattern === 'solid') {
+      pl.style.display = 'none';
+      bodyRect.setAttribute('fill','var(--body)'); cabPath.setAttribute('fill','var(--body)');
+      return;
+    }
+    if (state.pattern === 'gradient') {
+      pl.style.display = 'none';
+      bodyRect.setAttribute('fill', 'url(#gradientFill)');
+      cabPath.setAttribute('fill','var(--body)');
+      return;
+    }
+    bodyRect.setAttribute('fill','var(--body)'); cabPath.setAttribute('fill','var(--body)');
+    pl.style.display = '';
+    overlay.setAttribute('fill', state.pattern === 'stripes' ? 'url(#stripes)' : 'url(#dots)');
+  }
+
+  function applyFinish() {
+    const svg = document.getElementById('truck');
+    if (state.finish === 'matte')        svg.style.filter = 'saturate(.92) brightness(.92)';
+    else if (state.finish === 'metallic')svg.style.filter = 'contrast(1.1) saturate(1.15)';
+    else if (state.finish === 'wrap')    svg.style.filter = 'brightness(1.05)';
+    else                                  svg.style.filter = 'none';
+    document.getElementById('finish-label').textContent = state.finish[0].toUpperCase() + state.finish.slice(1);
+  }
+
+  function renderDecals() {
+    const layer = document.getElementById('decal-layer');
+    const iconMap = { bbq:'🍖', flame:'🔥', leaf:'🌿', coffee:'☕', taco:'🌮', pizza:'🍕', ice:'🍦', ramen:'🍜' };
+    const selected = state.decals.slice(0, 2);
+    let svg = '';
+    selected.forEach((id, i) => {
+      const x = i === 0 ? 86 : 296;
+      svg += `<text x="${x}" y="118" text-anchor="middle" font-size="28">${iconMap[id] || '★'}</text>`;
+    });
+    layer.innerHTML = svg;
+    document.getElementById('decal-count').textContent = state.decals.length + ' selected';
+    document.getElementById('line-decal-count').textContent = state.decals.length;
+  }
+
+  function recomputeCost() {
+    const base = 1800;
+    const finishCost = { gloss: 420, matte: 580, metallic: 920, wrap: 1450 }[state.finish] || 420;
+    const liveryCost = state.pattern === 'solid' ? 0 : (state.pattern === 'gradient' ? 650 : 380);
+    const decalCost = state.decals.length * 100;
+    const brand = 1000;
+    const total = base + finishCost + liveryCost + decalCost + brand;
+    document.getElementById('line-base').textContent = '$' + base.toLocaleString();
+    document.getElementById('line-finish').textContent = '$' + finishCost.toLocaleString();
+    document.getElementById('line-livery').textContent = '$' + liveryCost.toLocaleString();
+    document.getElementById('line-decal').textContent = '$' + decalCost.toLocaleString();
+    document.getElementById('line-total').textContent = '$' + total.toLocaleString();
+    document.getElementById('paint-cost').textContent = total.toLocaleString();
+  }
+
+  document.querySelectorAll('.layer-chip').forEach(c => c.addEventListener('click', () => setActiveLayer(c.dataset.layer)));
+
+  document.getElementById('pattern-tabs').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    pushHistory();
+    state.pattern = b.dataset.pattern;
+    document.querySelectorAll('#pattern-tabs button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    applyAll(); FTL.save();
+  });
+
+  document.getElementById('finish-seg').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    pushHistory();
+    state.finish = b.dataset.finish;
+    document.querySelectorAll('#finish-seg button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    applyAll(); FTL.save();
+  });
+
+  document.getElementById('decals').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    pushHistory();
+    const id = b.dataset.decal;
+    const i = state.decals.indexOf(id);
+    if (i >= 0) state.decals.splice(i, 1); else state.decals.push(id);
+    b.setAttribute('aria-pressed', state.decals.includes(id) ? 'true' : 'false');
+    applyAll(); FTL.save();
+  });
+
+  document.getElementById('brand-name').addEventListener('input', e => {
+    state.brandName = e.target.value || ' ';
+    brandText.textContent = state.brandName;
+    FTL.save();
+  });
+  document.getElementById('tagline').addEventListener('input', e => {
+    state.tagline = e.target.value || '';
+    tagText.textContent = state.tagline.toUpperCase();
+    FTL.save();
+  });
+
+  document.getElementById('hex-btn').addEventListener('click', () => document.getElementById('hex-picker').click());
+  document.getElementById('hex-picker').addEventListener('input', e => setLayerColor(e.target.value));
+
+  document.getElementById('tint').addEventListener('input', e => {
+    document.getElementById('tint-val').textContent = e.target.value;
+    const tint = parseInt(e.target.value, 10);
+    document.getElementById('body-group').style.filter =
+      `brightness(${1 + tint/200}) saturate(${1 + tint/120})`;
+  });
+
+  document.getElementById('undo-btn').addEventListener('click', () => {
+    const prev = history.pop(); if (!prev) return FTL.toast('Nothing to undo');
+    Object.assign(state, prev);
+    FTL.save(); applyAll(); renderPalette();
+    FTL.toast('Undone');
+  });
+
+  document.getElementById('save-btn').addEventListener('click', () => {
+    FTL.state.progress.paint = Math.min(100, (FTL.state.progress.paint || 0) + 10);
+    FTL.save();
+    FTL.toast('Design saved · +10% progress');
+    setTimeout(() => location.href = '../index.html', 900);
+  });
+
+  document.getElementById('share-btn').addEventListener('click', () => FTL.toast('Share link copied'));
+  document.getElementById('render-btn').addEventListener('click', () => FTL.toast('3D render queued · ~30s'));
+
+  document.getElementById('zoom-btn').addEventListener('click', () => {
+    const t = document.querySelector('.stage');
+    if (t.requestFullscreen) t.requestFullscreen();
+  });
+
+  // sync state-driven UI on load
+  document.querySelectorAll('#pattern-tabs button').forEach(x => x.setAttribute('aria-pressed', x.dataset.pattern === state.pattern ? 'true' : 'false'));
+  document.querySelectorAll('#finish-seg button').forEach(x => x.setAttribute('aria-pressed', x.dataset.finish === state.finish ? 'true' : 'false'));
+  document.querySelectorAll('.decal').forEach(d => d.setAttribute('aria-pressed', state.decals.includes(d.dataset.decal) ? 'true' : 'false'));
+  document.getElementById('brand-name').value = state.brandName;
+  document.getElementById('tagline').value = state.tagline;
+
+  renderPalette();
+  renderPresets();
+  applyAll();
+</script>
+</body>
+</html>

@@ -1,217 +1,175 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Regulations — Food Truck Launchpad</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/app.js" defer></script>
+<style>
+  .accordion {
+    background: var(--surface); border:1px solid var(--border);
+    border-radius:16px; overflow:hidden; margin: 0 14px 10px;
+  }
+  .accordion summary {
+    list-style:none; cursor:pointer; padding: 14px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .accordion summary::-webkit-details-marker { display:none; }
+  .accordion summary .chev { margin-left:auto; transition: transform .2s ease; }
+  .accordion[open] summary .chev { transform: rotate(180deg); }
+  .accordion .body { padding: 0 14px 14px; }
+</style>
+</head>
+<body>
+<div class="app-shell has-bottom-nav">
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Food Truck Permits Screen</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#137fec",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#101922",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-<style>
-        /* Custom scrollbar hiding for clean mobile look */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
-<!-- Top App Bar -->
-<div class="sticky top-0 z-10 bg-background-light dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-<div class="flex items-center p-4 pb-2 justify-between">
-<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<div class="flex flex-col items-center">
-<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Permits &amp; Regulations</h2>
-<span class="text-gray-500 dark:text-gray-400 text-xs font-medium flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">location_on</span> Austin, TX
-                    </span>
+  <header class="appbar">
+    <a href="../index.html" class="icon-btn"><span class="material-symbols-outlined">arrow_back</span></a>
+    <div><h1>Regulations</h1><span class="sub">Local rules, simplified · Austin, TX</span></div>
+    <button class="icon-btn"><span class="material-symbols-outlined">share</span></button>
+  </header>
+
+  <main style="padding: 14px 14px 0;">
+
+    <section class="card" style="padding:18px;background:
+        radial-gradient(120% 100% at 100% 0%, rgba(19,127,236,.18), transparent 60%),
+        linear-gradient(180deg,#131c26,#0f1722);">
+      <div class="pill pill-primary">Region: Austin (TX)</div>
+      <h2 style="margin:8px 0 4px;font-size:22px;font-weight:800;letter-spacing:-.01em;">
+        7 rules apply to your build.
+      </h2>
+      <p class="muted txt-sm" style="margin:0;">2 require action before you can serve customers.</p>
+      <div class="row gap-2 mt-3">
+        <button class="btn btn-primary" style="flex:1;">
+          <span class="material-symbols-outlined" style="font-size:18px">checklist</span>
+          Generate Checklist
+        </button>
+        <button class="btn btn-ghost"><span class="material-symbols-outlined" style="font-size:18px">edit_location</span></button>
+      </div>
+    </section>
+
+    <div class="section-title"><h2>Browse by category</h2></div>
+
+    <details class="accordion" open>
+      <summary>
+        <span class="material-symbols-outlined" style="color:var(--brand-primary)">restaurant</span>
+        <span style="font-weight:700;">Food handling &amp; storage</span>
+        <span class="pill pill-success" style="margin-left:8px;">3 rules</span>
+        <span class="chev material-symbols-outlined">expand_more</span>
+      </summary>
+      <div class="body">
+        <div class="row-item" style="margin-bottom:8px;">
+          <div class="leading" style="background:#10b981;"><span class="material-symbols-outlined" style="font-size:20px">thermostat</span></div>
+          <div>
+            <div class="semi">Cold storage ≤ 41°F</div>
+            <p class="muted txt-sm" style="margin:2px 0 0;">All refrigerated items must be held at 41°F or below at all times. Log temps 2x daily.</p>
+          </div>
+        </div>
+        <div class="row-item" style="margin-bottom:8px;">
+          <div class="leading" style="background:#10b981;"><span class="material-symbols-outlined" style="font-size:20px">wash</span></div>
+          <div>
+            <div class="semi">3-compartment sink required</div>
+            <p class="muted txt-sm" style="margin:2px 0 0;">Wash · rinse · sanitize. Plus a separate handwashing station.</p>
+          </div>
+        </div>
+        <div class="row-item">
+          <div class="leading" style="background:#10b981;"><span class="material-symbols-outlined" style="font-size:20px">badge</span></div>
+          <div>
+            <div class="semi">Certified food protection manager</div>
+            <p class="muted txt-sm" style="margin:2px 0 0;">At least one on-site at all times. Wallet card must be available.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="accordion">
+      <summary>
+        <span class="material-symbols-outlined" style="color:var(--danger)">local_fire_department</span>
+        <span style="font-weight:700;">Fire &amp; propane</span>
+        <span class="pill pill-danger" style="margin-left:8px;">action req'd</span>
+        <span class="chev material-symbols-outlined">expand_more</span>
+      </summary>
+      <div class="body">
+        <div class="row-item" style="margin-bottom:8px;">
+          <div class="leading" style="background:#ef4444;"><span class="material-symbols-outlined" style="font-size:20px">propane_tank</span></div>
+          <div>
+            <div class="semi">Propane tanks ≤ 100 lb total</div>
+            <p class="muted txt-sm" style="margin:2px 0 0;">Mounted outside the truck body, secured, with shutoff valve accessible from the operator side.</p>
+          </div>
+        </div>
+        <div class="row-item">
+          <div class="leading" style="background:#ef4444;"><span class="material-symbols-outlined" style="font-size:20px">fire_extinguisher</span></div>
+          <div>
+            <div class="semi">Type K extinguisher + Ansul hood</div>
+            <p class="muted txt-sm" style="margin:2px 0 0;">Required any time you cook with oil or grease. Annual inspection.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="accordion">
+      <summary>
+        <span class="material-symbols-outlined" style="color:var(--brand-primary)">place</span>
+        <span style="font-weight:700;">Where you can park</span>
+        <span class="pill pill-warn" style="margin-left:8px;">2 rules</span>
+        <span class="chev material-symbols-outlined">expand_more</span>
+      </summary>
+      <div class="body">
+        <div class="row-item" style="margin-bottom:8px;">
+          <div class="leading" style="background:#f59e0b;"><span class="material-symbols-outlined" style="font-size:20px">straighten</span></div>
+          <div>
+            <div class="semi">15 ft from any building entrance</div>
+            <p class="muted txt-sm" style="margin:2px 0 0;">Cannot block emergency exits or ADA paths.</p>
+          </div>
+        </div>
+        <div class="row-item">
+          <div class="leading" style="background:#f59e0b;"><span class="material-symbols-outlined" style="font-size:20px">timer</span></div>
+          <div>
+            <div class="semi">2 hr limit on public streets</div>
+            <p class="muted txt-sm" style="margin:2px 0 0;">Some districts require permits to exceed.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="accordion">
+      <summary>
+        <span class="material-symbols-outlined" style="color:var(--success)">payments</span>
+        <span style="font-weight:700;">Tax &amp; payment processing</span>
+        <span class="pill pill-success" style="margin-left:8px;">2 rules</span>
+        <span class="chev material-symbols-outlined">expand_more</span>
+      </summary>
+      <div class="body">
+        <div class="row-item">
+          <div class="leading" style="background:#10b981;"><span class="material-symbols-outlined" style="font-size:20px">receipt_long</span></div>
+          <div>
+            <div class="semi">Collect 8.25% TX sales tax</div>
+            <p class="muted txt-sm" style="margin:2px 0 0;">Includes 6.25% state + city &amp; transit add-ons in Austin.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <div style="padding:18px 14px;">
+      <button class="btn btn-accent btn-block" onclick="FTL.toast('PDF summary downloaded')">
+        <span class="material-symbols-outlined" style="font-size:18px">download</span>
+        Download full PDF summary
+      </button>
+    </div>
+
+    <div style="height:24px"></div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="../index.html"><span class="material-symbols-outlined">dashboard</span><span>Home</span></a>
+    <a href="paint.html"><span class="material-symbols-outlined">brush</span><span>Design</span></a>
+    <a href="equipment.html"><span class="material-symbols-outlined">kitchen</span><span>Build</span></a>
+    <a href="permits.html"><span class="material-symbols-outlined">verified</span><span>Permits</span></a>
+    <a href="launch.html"><span class="material-symbols-outlined">rocket_launch</span><span>Launch</span></a>
+  </nav>
 </div>
-<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-<!-- Progress Section -->
-<div class="flex flex-col gap-3 p-4 pt-6">
-<div class="flex gap-6 justify-between items-end">
-<p class="text-gray-900 dark:text-white text-xl font-bold leading-normal">Your Progress</p>
-<p class="text-primary text-sm font-bold leading-normal bg-primary/10 px-2 py-1 rounded-md">4/12 Acquired</p>
-</div>
-<div class="relative h-4 w-full rounded-full bg-gray-200 dark:bg-[#3b4754] overflow-hidden">
-<div class="absolute top-0 left-0 h-full rounded-full bg-primary transition-all duration-1000 ease-out" style="width: 33%;">
-<div class="absolute top-0 left-0 h-full w-full bg-white/20 animate-pulse"></div>
-</div>
-</div>
-<div class="flex justify-between items-center mt-1">
-<p class="text-gray-500 dark:text-[#9dabb9] text-xs font-normal leading-normal">Keep going! You're 33% there.</p>
-<p class="text-gray-400 dark:text-gray-600 text-xs font-normal">Est. Launch: Nov 2023</p>
-</div>
-</div>
-<!-- Segmented Control -->
-<div class="px-4 py-2 sticky top-[72px] z-10 bg-background-light dark:bg-background-dark pb-4">
-<div class="flex h-12 w-full items-center justify-center rounded-xl bg-gray-200 dark:bg-[#283039] p-1">
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-sm font-medium group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">All</span>
-<input checked="" class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="All"/>
-</label>
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-sm font-medium group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">Pending</span>
-<input class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="Pending"/>
-</label>
-<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111418] has-[:checked]:shadow-sm transition-all duration-200">
-<span class="truncate text-gray-600 dark:text-[#9dabb9] text-sm font-medium group-has-[:checked]:text-primary dark:group-has-[:checked]:text-white">Completed</span>
-<input class="invisible w-0 h-0 absolute" name="status-filter" type="radio" value="Completed"/>
-</label>
-</div>
-</div>
-<!-- Content List -->
-<div class="flex flex-col pb-24">
-<!-- Section: Critical Compliance -->
-<div class="mt-2">
-<h2 class="text-gray-900 dark:text-white tracking-tight text-lg font-bold leading-tight px-4 pb-3 pt-2 flex items-center gap-2">
-<span class="material-symbols-outlined text-red-500" style="font-variation-settings: 'FILL' 1;">error</span>
-                    Critical Compliance
-                </h2>
-<!-- Item 1 -->
-<div class="group mx-4 mb-3 p-4 rounded-xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-transform duration-100 cursor-pointer">
-<div class="flex items-start gap-4 justify-between">
-<div class="flex items-start gap-3">
-<div class="text-white flex items-center justify-center rounded-lg bg-primary shrink-0 size-10 mt-1">
-<span class="material-symbols-outlined text-[20px]">assignment_ind</span>
-</div>
-<div class="flex flex-col">
-<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight mb-1">Business License</p>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Overdue</span>
-<span class="text-gray-500 dark:text-gray-400 text-xs">• $150</span>
-</div>
-<p class="text-gray-500 dark:text-[#9dabb9] text-xs font-normal line-clamp-2">Required for all businesses operating within city limits. Needs annual renewal.</p>
-</div>
-</div>
-<div class="shrink-0 flex flex-col items-end gap-2">
-<span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
-</div>
-</div>
-</div>
-<!-- Item 2 -->
-<div class="group mx-4 mb-3 p-4 rounded-xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-transform duration-100 cursor-pointer">
-<div class="flex items-start gap-4 justify-between">
-<div class="flex items-start gap-3">
-<div class="text-white flex items-center justify-center rounded-lg bg-[#ef4444] shrink-0 size-10 mt-1">
-<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
-</div>
-<div class="flex flex-col">
-<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight mb-1">Fire Safety Inspection</p>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Pending Review</span>
-<span class="text-gray-500 dark:text-gray-400 text-xs">• Due Oct 15</span>
-</div>
-<p class="text-gray-500 dark:text-[#9dabb9] text-xs font-normal line-clamp-2">Propane tank certification and suppression system check.</p>
-</div>
-</div>
-<div class="shrink-0">
-<span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Section: Health & Safety -->
-<div class="mt-4">
-<h2 class="text-gray-900 dark:text-white tracking-tight text-lg font-bold leading-tight px-4 pb-3 pt-2 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
-                    Health &amp; Safety
-                </h2>
-<!-- Item 3 -->
-<div class="group mx-4 mb-3 p-4 rounded-xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-transform duration-100 cursor-pointer opacity-60">
-<div class="flex items-start gap-4 justify-between">
-<div class="flex items-start gap-3">
-<div class="text-white flex items-center justify-center rounded-lg bg-[#10b981] shrink-0 size-10 mt-1">
-<span class="material-symbols-outlined text-[20px]">sanitizer</span>
-</div>
-<div class="flex flex-col">
-<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight mb-1 line-through decoration-gray-500">Food Handler Card</p>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Completed</span>
-</div>
-</div>
-</div>
-<div class="shrink-0 flex items-center justify-center size-8 rounded-full bg-green-500/20">
-<span class="material-symbols-outlined text-green-500 text-lg font-bold">check</span>
-</div>
-</div>
-</div>
-<!-- Item 4 -->
-<div class="group mx-4 mb-3 p-4 rounded-xl bg-white dark:bg-[#1a222c] border border-gray-100 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-transform duration-100 cursor-pointer">
-<div class="flex items-start gap-4 justify-between">
-<div class="flex items-start gap-3">
-<div class="text-white flex items-center justify-center rounded-lg bg-gray-400 dark:bg-gray-600 shrink-0 size-10 mt-1">
-<span class="material-symbols-outlined text-[20px]">water_drop</span>
-</div>
-<div class="flex flex-col">
-<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight mb-1">Water Discharge Permit</p>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Not Started</span>
-<span class="text-gray-500 dark:text-gray-400 text-xs">• $75</span>
-</div>
-</div>
-</div>
-<div class="shrink-0">
-<span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Empty State Illustration Placeholder (for demonstration if list was empty) -->
-<!-- 
-            <div class="flex flex-col items-center justify-center py-12 px-8 text-center hidden">
-                <div class="size-32 rounded-full bg-gray-100 dark:bg-[#1a222c] flex items-center justify-center mb-4">
-                     <span class="material-symbols-outlined text-4xl text-gray-400">check_circle</span>
-                </div>
-                <h3 class="text-gray-900 dark:text-white text-lg font-bold">All Caught Up!</h3>
-                <p class="text-gray-500 dark:text-gray-400 mt-2">You have no pending permits in this category.</p>
-            </div>
-            -->
-<!-- Add New Button (Bottom of list) -->
-<div class="mt-4 mx-4">
-<button class="w-full py-3 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 font-medium flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#1a222c] transition-colors">
-<span class="material-symbols-outlined">add</span>
-                    Add Custom Permit
-                </button>
-</div>
-</div>
-<!-- Floating Action Button for mobile add -->
-<button class="fixed bottom-6 right-6 z-20 size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/40 flex items-center justify-center active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-2xl">add</span>
-</button>
-</div>
-</body></html>
+</body>
+</html>

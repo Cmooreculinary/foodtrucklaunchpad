@@ -1,262 +1,174 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Food Truck Interior View</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Theme Configuration -->
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#137fec",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#101922",
-                        "surface-dark": "#1c2127",
-                        "text-secondary": "#9dabb9"
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Interior Studio — Food Truck Launchpad</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/app.js" defer></script>
 <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
-<!-- LLM INSTRUCTIONS: 
-    This screen allows users to customize their food truck interior.
-    - Central image is a 3D preview.
-    - Tabs switch between material categories.
-    - Grid items update the preview and cost.
-    - Maintain strict mobile-first responsiveness.
--->
-<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
-<!-- Header -->
-<div class="sticky top-0 z-50 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-gray-200 dark:border-gray-800">
-<div class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer">
-<span class="material-symbols-outlined">arrow_back</span>
-</div>
-<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Interior Studio</h2>
-<div class="flex w-12 items-center justify-end">
-<span class="material-symbols-outlined text-text-secondary cursor-pointer">help</span>
-</div>
-</div>
-<!-- 3D Preview Card -->
-<div class="p-4 w-full">
-<div class="relative flex flex-col overflow-hidden rounded-xl shadow-lg bg-surface-dark border border-gray-800">
-<!-- Main Preview Image -->
-<div class="w-full h-64 bg-center bg-cover bg-no-repeat relative group" data-alt="3D rendering of a food truck interior kitchen looking towards the serving window" data-img="preview_main" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFScW87egNjwTpq5pmoYvi32IwrmqTDBCqkZcIDy1xz2rbQakjoTxVl0vCV5BUKFf_Qp5xdRp_GLkrRTEEnt0l1A7D0MaiOokgOcN-omGBwtWYWECgZgts8anNM-XwTBPrAGXRruJFT8SYZail1pQriDPsYOomstXsV5TDGhN4BDVB9RpbLg-Zlqoppknygmm_1HrsCdfAQwfRzi8CdfN3iBGAf73dxU3UchNdP2gpHb0N0dpy3O6F9Go1NNIaq9_WQH18b80fjeE");'>
-<!-- Interactive Overlay Controls -->
-<div class="absolute bottom-3 right-3 flex gap-2">
-<button class="bg-black/50 backdrop-blur-md p-2 rounded-full text-white hover:bg-primary transition-colors">
-<span class="material-symbols-outlined text-sm">360</span>
-</button>
-<button class="bg-black/50 backdrop-blur-md p-2 rounded-full text-white hover:bg-primary transition-colors">
-<span class="material-symbols-outlined text-sm">zoom_out_map</span>
-</button>
-</div>
-<!-- Cost Badge -->
-<div class="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-sm border border-primary/50">
-<p class="text-white text-xs font-semibold uppercase tracking-wider">Est. Cost</p>
-<p class="text-white text-lg font-bold leading-none">$12,500</p>
-</div>
-</div>
-<!-- Context Info -->
-<div class="flex w-full flex-col gap-1 p-4 bg-surface-dark">
-<div class="flex items-center justify-between">
-<p class="text-white text-base font-bold leading-tight">Current Configuration</p>
-<div class="flex items-center gap-1 text-primary text-sm font-medium">
-<span class="material-symbols-outlined text-sm">check_circle</span>
-<span>Saved</span>
-</div>
-</div>
-<p class="text-text-secondary text-sm font-normal">View: Looking from serving window</p>
-</div>
-</div>
-</div>
-<!-- Category Tabs -->
-<div class="sticky top-[72px] z-40 bg-background-light dark:bg-background-dark pb-2 pt-2">
-<div class="flex overflow-x-auto no-scrollbar px-4 gap-6 border-b border-gray-200 dark:border-gray-800 snap-x">
-<button class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-3 min-w-[80px] snap-start whitespace-nowrap">
-<span class="material-symbols-outlined mb-1">grid_view</span>
-<p class="text-sm font-bold tracking-wide">Flooring</p>
-</button>
-<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary hover:text-slate-900 dark:hover:text-white pb-3 min-w-[80px] snap-start whitespace-nowrap">
-<span class="material-symbols-outlined mb-1">wallpaper</span>
-<p class="text-sm font-bold tracking-wide">Walls</p>
-</button>
-<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary hover:text-slate-900 dark:hover:text-white pb-3 min-w-[80px] snap-start whitespace-nowrap">
-<span class="material-symbols-outlined mb-1">roofing</span>
-<p class="text-sm font-bold tracking-wide">Ceiling</p>
-</button>
-<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary hover:text-slate-900 dark:hover:text-white pb-3 min-w-[80px] snap-start whitespace-nowrap">
-<span class="material-symbols-outlined mb-1">countertops</span>
-<p class="text-sm font-bold tracking-wide">Counters</p>
-</button>
-<button class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary hover:text-slate-900 dark:hover:text-white pb-3 min-w-[80px] snap-start whitespace-nowrap">
-<span class="material-symbols-outlined mb-1">lightbulb</span>
-<p class="text-sm font-bold tracking-wide">Lighting</p>
-</button>
-</div>
-</div>
-<!-- Selection Title -->
-<div class="px-4 pt-6 pb-2 flex justify-between items-end">
-<div>
-<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Select Material</h3>
-<p class="text-text-secondary text-sm mt-1">Choose durability and style</p>
-</div>
-<button class="text-primary text-sm font-bold flex items-center">
-            Filters <span class="material-symbols-outlined text-sm ml-1">filter_list</span>
-</button>
-</div>
-<!-- Material Grid -->
-<div class="grid grid-cols-2 gap-3 p-4 pb-8">
-<!-- Item 1: Active -->
-<div class="relative group cursor-pointer">
-<div class="absolute inset-0 rounded-xl ring-2 ring-primary z-10 pointer-events-none"></div>
-<div class="absolute top-2 right-2 z-20 bg-primary text-white rounded-full p-1 shadow-sm">
-<span class="material-symbols-outlined text-sm block">check</span>
-</div>
-<div class="bg-surface-dark flex flex-col rounded-xl overflow-hidden shadow-sm h-full">
-<div class="h-32 bg-cover bg-center" data-alt="Black heavy duty rubber floor mat texture" data-img="material_rubber" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgQpICa2aHlj4OdmZdsnPExRvsJcyy16D7dMvRk0r4wvjpvfR-7rpdukLL-u3T0zDuqbBpU01sWg_hCJbgEJ1ro4Qp__N9WIXUJQL3k9lD6LvdfQ-tmh2mz2eXYT4K9FZAfJH9Kv9I1JREGrCIDaHTgd6cQmcMbWh8jEysCV53aVMyPizvJ9tzyMxD9eRS2u9JFKkKFpIUQbmPaZk4l8A0y6Dsdfz_NnZb4oHMwQnIGHV3Ne0Ji_G66MrOQTT8WZ3OvMX0QbS5_KQ");'>
-</div>
-<div class="p-3 flex flex-col flex-1 justify-between">
-<div>
-<p class="text-white text-sm font-bold leading-tight">Rubber Safe-Mat</p>
-<p class="text-text-secondary text-xs mt-1">Non-slip, easy clean</p>
-</div>
-<div class="mt-2 flex items-center justify-between">
-<span class="text-white font-semibold text-sm">$450</span>
-<span class="text-xs text-green-400 font-medium">Best Value</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Item 2 -->
-<div class="relative group cursor-pointer hover:opacity-90 transition-opacity">
-<div class="bg-surface-dark flex flex-col rounded-xl overflow-hidden shadow-sm h-full border border-transparent hover:border-gray-700">
-<div class="h-32 bg-cover bg-center" data-alt="Diamond plate aluminum metal texture" data-img="material_diamond" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA50262odEXSu8xH8H0w-JNjBVtnW3UwKag9ygKyeont6TWs0M_upHKtXd9ukimW592vWRYYVrbrcIEAw0pF2NuxIkk5iwyB7VHxV7vNSxEXAh1mERd_o-Mh-_Pa3vlBBU5OUiqXm21adbDq0cCsabmoPOSuBLWMcRJTDYNAgil31YGoN8rJrTIXDsRecIvYC2coaty63Q5ujBS3CXAoAhVwXXAdxmPOiRRO7WoxDCM9sxKB_1FyKAsHXtsrpoHt_NA7aWUbib8fAU");'>
-</div>
-<div class="p-3 flex flex-col flex-1 justify-between">
-<div>
-<p class="text-white text-sm font-bold leading-tight">Diamond Aluminum</p>
-<p class="text-text-secondary text-xs mt-1">Industrial strength</p>
-</div>
-<div class="mt-2 flex items-center justify-between">
-<span class="text-white font-semibold text-sm">$850</span>
-<span class="text-xs text-text-secondary font-medium">+$$</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Item 3 -->
-<div class="relative group cursor-pointer hover:opacity-90 transition-opacity">
-<div class="bg-surface-dark flex flex-col rounded-xl overflow-hidden shadow-sm h-full border border-transparent hover:border-gray-700">
-<div class="h-32 bg-cover bg-center" data-alt="Wood grain vinyl composite flooring texture" data-img="material_vinyl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMPZXJ7Z8JL0EWP-mZTiluszpfQ5hq9p6jSNvmoZeFf7M9nmoRVco4fsjnd5XRPv9gkz4SoA4VFudipga8Pjzo6zM8i42o3wCWjsRUvVFK8eFOywa584VQB9nwtC4O0c1wCGSaYo6dGksxsq-ebHIPeNQ-FHlCMLM1sUd8HCzcvlSpVdm0-Sq_NOPMMs8WwczKN3X28mF1VMXlkttB1UMYubHbBCHZj0kv7JDdsyxJ1euKpGOYVSd7mtgqgAYZDCzey-s-36iapz8");'>
-</div>
-<div class="p-3 flex flex-col flex-1 justify-between">
-<div>
-<p class="text-white text-sm font-bold leading-tight">Vinyl Composite</p>
-<p class="text-text-secondary text-xs mt-1">Warm aesthetic</p>
-</div>
-<div class="mt-2 flex items-center justify-between">
-<span class="text-white font-semibold text-sm">$620</span>
-<span class="text-xs text-text-secondary font-medium">+$</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Item 4 -->
-<div class="relative group cursor-pointer hover:opacity-90 transition-opacity">
-<div class="bg-surface-dark flex flex-col rounded-xl overflow-hidden shadow-sm h-full border border-transparent hover:border-gray-700">
-<div class="h-32 bg-cover bg-center" data-alt="Glossy grey epoxy floor coating texture" data-img="material_epoxy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQhattMTE58JR7agpdb4XvKTCn5sC5FEDL5nI4JDyDRKlgUufAnhXiJeMXGFunf2QUpzKqUM1cwkhpx0p3uCC5O4vNjxkEeR0OH-j2R988SEfMl0VQ57oyDw530sIImvhxWHsJq1eq2LRRAA7rTEcBbNvDRl6l9lIHxRMpy5gkscch3xavc-feeu48-iES_82-611jky5EaRUayHsg3ms7GTYvtrlFbvg9OSYo7zQeiB4OVH4iGNOri6ounIf84QNJakX6MrOfd4M");'>
-</div>
-<div class="p-3 flex flex-col flex-1 justify-between">
-<div>
-<p class="text-white text-sm font-bold leading-tight">Epoxy Coat</p>
-<p class="text-text-secondary text-xs mt-1">Seamless finish</p>
-</div>
-<div class="mt-2 flex items-center justify-between">
-<span class="text-white font-semibold text-sm">$1,200</span>
-<span class="text-xs text-text-secondary font-medium">+$$$</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Floating Action Button & Bottom Nav Area -->
-<div class="fixed bottom-0 left-0 w-full z-50 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 pb-safe">
-<!-- Save Action -->
-<div class="px-4 py-3 w-full">
-<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
-<span>Save Configuration</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
-</div>
-<!-- Bottom Navigation -->
-<div class="flex items-center justify-between px-6 py-2 pb-6">
-<div class="flex flex-col items-center gap-1 text-text-secondary cursor-pointer hover:text-primary transition-colors">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="text-[10px] font-medium">Concept</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-primary cursor-pointer">
-<span class="material-symbols-outlined fill-current">design_services</span>
-<span class="text-[10px] font-medium">Design</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-text-secondary cursor-pointer hover:text-primary transition-colors">
-<span class="material-symbols-outlined">payments</span>
-<span class="text-[10px] font-medium">Finance</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-text-secondary cursor-pointer hover:text-primary transition-colors">
-<span class="material-symbols-outlined">assignment</span>
-<span class="text-[10px] font-medium">Permits</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-text-secondary cursor-pointer hover:text-primary transition-colors">
-<span class="material-symbols-outlined">rocket_launch</span>
-<span class="text-[10px] font-medium">Launch</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Image Helper Configuration Object (No Execution) -->
-<script>
-    const APP_IMAGES = {
-        preview_main: "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?q=80&w=1000&auto=format&fit=crop",
-        material_rubber: "https://images.unsplash.com/photo-1511389026070-a14ce610a541?q=80&w=400&auto=format&fit=crop",
-        material_diamond: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?q=80&w=400&auto=format&fit=crop",
-        material_vinyl: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
-        material_epoxy: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=400&auto=format&fit=crop"
-    };
+  .preview {
+    position:relative; border-radius:22px; overflow:hidden;
+    background: linear-gradient(180deg,#0e1722,#131c26);
+    border: 1px solid var(--border); aspect-ratio: 16/10;
+    box-shadow: var(--shadow-lg);
+  }
+  .preview svg { width:100%; height:100%; display:block; }
+  .material-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 14px; }
+  .mat-card {
+    border-radius: 16px; overflow:hidden; cursor:pointer;
+    border: 1px solid var(--border); background: var(--surface);
+    transition: transform .15s ease, border-color .15s ease;
+  }
+  .mat-card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+  .mat-card[aria-pressed="true"] { border-color: var(--brand-primary); box-shadow: var(--glow-primary); }
+  .mat-card .swatch-img { height: 110px; background-size: cover; background-position: center; position:relative; }
+  .mat-card .body { padding: 10px 12px 12px; }
+</style>
+</head>
+<body>
+<div class="app-shell has-bottom-nav">
 
-    /**
-     * Helper function to resolve image paths
-     * @param {string} key - The data-img key
-     * @returns {string} - The resolved URL
-     */
-    function resolveImage(key) {
-        return APP_IMAGES[key] || "https://placeholder.pics/svg/300";
-    }
+  <header class="appbar">
+    <a href="../index.html" class="icon-btn"><span class="material-symbols-outlined">arrow_back</span></a>
+    <div><h1>Interior Studio</h1><span class="sub">Phase 4 · Materials</span></div>
+    <button class="icon-btn"><span class="material-symbols-outlined">help</span></button>
+  </header>
+
+  <main style="padding: 14px 14px 0;">
+
+    <section class="preview">
+      <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3a3a3a"/>
+            <stop offset="1" stop-color="#1a1a1a"/>
+          </linearGradient>
+          <linearGradient id="wallG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#c8d3df"/>
+            <stop offset="1" stop-color="#7c8b9a"/>
+          </linearGradient>
+          <linearGradient id="counterG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#eef2f7"/>
+            <stop offset="1" stop-color="#c4cfdb"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="480" height="180" fill="url(#wallG)"/>
+        <rect x="120" y="40" width="240" height="100" rx="8" fill="#3b556e"/>
+        <rect x="128" y="48" width="224" height="84" fill="#cfe6ff" opacity=".75"/>
+        <line x1="240" y1="48" x2="240" y2="132" stroke="rgba(0,0,0,.2)"/>
+        <rect x="20" y="170" width="440" height="22" fill="url(#counterG)"/>
+        <rect x="30"  y="142" width="80"  height="28" rx="4" fill="#2a3645"/>
+        <rect x="120" y="146" width="80"  height="24" rx="4" fill="#2a3645"/>
+        <rect x="220" y="142" width="100" height="28" rx="4" fill="#2a3645"/>
+        <rect x="340" y="138" width="120" height="32" rx="4" fill="#2a3645"/>
+        <rect x="0" y="192" width="480" height="108" fill="url(#floorG)"/>
+        <ellipse cx="240" cy="280" rx="180" ry="14" fill="white" opacity=".06"/>
+      </svg>
+      <div style="position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);padding:6px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.08);">
+        <div class="txt-xs muted" style="text-transform:uppercase;letter-spacing:.08em;font-weight:700;">Est. Interior</div>
+        <div class="bold" style="font-size:16px;color:white;">$12,500</div>
+      </div>
+      <div style="position:absolute;bottom:12px;right:12px;display:flex;gap:6px;">
+        <button class="icon-btn" style="background:rgba(0,0,0,.5);color:#fff;width:34px;height:34px;"><span class="material-symbols-outlined" style="font-size:18px">360</span></button>
+        <button class="icon-btn" style="background:rgba(0,0,0,.5);color:#fff;width:34px;height:34px;"><span class="material-symbols-outlined" style="font-size:18px">zoom_in</span></button>
+      </div>
+    </section>
+
+    <div class="tabs" style="padding: 12px 0 4px;" id="cat-tabs">
+      <button aria-pressed="true">Flooring</button>
+      <button aria-pressed="false">Walls</button>
+      <button aria-pressed="false">Ceiling</button>
+      <button aria-pressed="false">Counters</button>
+      <button aria-pressed="false">Lighting</button>
+      <button aria-pressed="false">Shelving</button>
+    </div>
+
+    <div class="section-title"><h2>Select Material</h2><a href="#">Filter</a></div>
+
+    <div class="material-grid" style="padding-bottom: 14px;">
+      <article class="mat-card" aria-pressed="true">
+        <div class="swatch-img" style="background:repeating-linear-gradient(45deg,#222 0 6px,#1a1a1a 6px 12px);">
+          <span class="pill pill-success" style="position:absolute;top:8px;left:8px;">Best Value</span>
+        </div>
+        <div class="body">
+          <h4 style="margin:0;font-size:14px;font-weight:700;">Rubber Safe-Mat</h4>
+          <p class="txt-xs muted" style="margin:2px 0 6px;">Non-slip · easy clean</p>
+          <div class="row between"><span class="semi">$450</span><span class="txt-xs muted">★ 4.8</span></div>
+        </div>
+      </article>
+      <article class="mat-card">
+        <div class="swatch-img" style="background:linear-gradient(135deg,#a3a3a3,#6b6b6b);background-image:radial-gradient(circle at 20% 20%, rgba(255,255,255,.4) 1px, transparent 2px),radial-gradient(circle at 60% 60%, rgba(255,255,255,.4) 1px, transparent 2px);background-size:12px 12px;"></div>
+        <div class="body">
+          <h4 style="margin:0;font-size:14px;font-weight:700;">Diamond Aluminum</h4>
+          <p class="txt-xs muted" style="margin:2px 0 6px;">Industrial strength</p>
+          <div class="row between"><span class="semi">$850</span><span class="txt-xs muted">★ 4.6</span></div>
+        </div>
+      </article>
+      <article class="mat-card">
+        <div class="swatch-img" style="background:linear-gradient(90deg,#8b5a2b,#a0673a,#8b5a2b);background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.1) 0 8px, transparent 8px 14px);"></div>
+        <div class="body">
+          <h4 style="margin:0;font-size:14px;font-weight:700;">Vinyl Wood</h4>
+          <p class="txt-xs muted" style="margin:2px 0 6px;">Warm aesthetic</p>
+          <div class="row between"><span class="semi">$620</span><span class="txt-xs muted">★ 4.4</span></div>
+        </div>
+      </article>
+      <article class="mat-card">
+        <div class="swatch-img" style="background:radial-gradient(circle at 40% 40%, #4b5563, #1f2937 70%);">
+          <span class="pill pill-accent" style="position:absolute;top:8px;left:8px;">Premium</span>
+        </div>
+        <div class="body">
+          <h4 style="margin:0;font-size:14px;font-weight:700;">Epoxy Coat</h4>
+          <p class="txt-xs muted" style="margin:2px 0 6px;">Seamless finish</p>
+          <div class="row between"><span class="semi">$1,200</span><span class="txt-xs muted">★ 4.9</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="section-title"><h2>Mood Lighting</h2></div>
+    <div class="card card-tight" style="margin:0 14px;">
+      <div class="row between"><span class="semi">Warmth</span><span class="muted txt-sm" id="warmth-val">3000K</span></div>
+      <input type="range" min="2700" max="5000" value="3000" step="100" class="slider mt-2" id="warmth">
+      <div class="row between mt-3"><span class="semi">Brightness</span><span class="muted txt-sm" id="bright-val">80%</span></div>
+      <input type="range" min="0" max="100" value="80" class="slider mt-2" id="bright">
+    </div>
+
+    <div style="padding: 18px 14px;">
+      <button class="btn btn-primary btn-block" id="save-btn">
+        <span>Save & continue</span><span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+      </button>
+    </div>
+    <div style="height:24px"></div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="../index.html"><span class="material-symbols-outlined">dashboard</span><span>Home</span></a>
+    <a href="paint.html"><span class="material-symbols-outlined">brush</span><span>Design</span></a>
+    <a href="equipment.html"><span class="material-symbols-outlined">kitchen</span><span>Build</span></a>
+    <a href="permits.html"><span class="material-symbols-outlined">verified</span><span>Permits</span></a>
+    <a href="launch.html"><span class="material-symbols-outlined">rocket_launch</span><span>Launch</span></a>
+  </nav>
+</div>
+
+<script>
+  document.getElementById('cat-tabs').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    document.querySelectorAll('#cat-tabs button').forEach(x => x.setAttribute('aria-pressed', x===b?'true':'false'));
+  });
+  document.querySelectorAll('.mat-card').forEach(c => c.addEventListener('click', () => {
+    document.querySelectorAll('.mat-card').forEach(x => x.setAttribute('aria-pressed','false'));
+    c.setAttribute('aria-pressed','true');
+  }));
+  document.getElementById('warmth').addEventListener('input', e => document.getElementById('warmth-val').textContent = e.target.value + 'K');
+  document.getElementById('bright').addEventListener('input', e => document.getElementById('bright-val').textContent = e.target.value + '%');
+  document.getElementById('save-btn').addEventListener('click', () => {
+    FTL.state.progress.interior = Math.min(100, (FTL.state.progress.interior||0) + 10);
+    FTL.save();
+    FTL.toast('Interior saved · +10% progress');
+    setTimeout(() => location.href = '../index.html', 800);
+  });
 </script>
-</body></html>
+</body>
+</html>
