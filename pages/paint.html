@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Interactive paint shop — live truck preview, color palettes, livery patterns, finishes, decals, and a real-time cost breakdown." />
+<meta name="theme-color" content="#0a0f1a" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 <title>Paint Shop — Food Truck Launchpad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -337,6 +340,7 @@
 </div>
 
 <script>
+  document.addEventListener('DOMContentLoaded', () => {
   const palette = [
     '#FF6B35','#FF3D3D','#FFD23F','#F59E0B','#E11D48','#7C2D12','#FFE9D6',
     '#137FEC','#0EA5E9','#2DD4BF','#10B981','#22C55E','#1E40AF','#0A2540',
@@ -580,6 +584,7 @@
   renderPalette();
   renderPresets();
   applyAll();
+  });
 </script>
 </body>
 </html>
