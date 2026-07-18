@@ -23,6 +23,23 @@ dashboard centers itself on larger screens.
 - Shared design tokens & components: `assets/styles.css`
 - Shared client state (theme + selections + budget, persisted to `localStorage`): `assets/app.js`
 - Material Symbols + Inter via Google Fonts CDN
+- Custom 404 page (`404.html`) served by Render for unknown routes
+
+## Deploying
+
+`render.yaml` configures a one-click [Render](https://render.com) static site:
+long-lived immutable caching for `/assets/*`, always-fresh HTML, and clean
+routes (`/paint`, `/chassis`, …) that rewrite to the module pages. Any other
+static host (GitHub Pages, Netlify, Vercel) works too — there is nothing to
+build.
+
+## Relationship to the master prototype
+
+This repository is the canonical, deploy-ready home of the app. It supersedes
+the single-file `FTLP_Master_Prototype.html` design prototype: the prototype's
+screens were split into per-module pages with shared CSS/JS extracted into
+`assets/`. New ideas can still be sketched in the single-file prototype, but
+anything meant to ship should land here as a page under `pages/`.
 
 ## Notes
 
